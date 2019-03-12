@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Assistant-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/Assistant-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/Assistant-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/Assistant-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Cattieshine';
+    font-style: normal;
+    src: url('/fonts/Cattieshine.ttf');
+}
+
+
+:root {
+    --bg-color: hsl(200, 25%, 15%);
+    --main-accent: hsl(200, 100%, 50%);
+    --sub-accent: hsl(280, 100%, 50%);
+
+    --white: hsl(0, 0%, 100%);
+    --white-50: hsla(0, 0%, 100%, 0.5);
+    --white-30: hsla(0, 0%, 100%, 0.3);
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    font-family: 'Assistant', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--white);
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+@media all and (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+    }
+}
