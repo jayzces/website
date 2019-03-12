@@ -34,13 +34,20 @@
 
 
 :root {
-    --bg-color: hsl(200, 25%, 15%);
-    --main-accent: hsl(200, 100%, 50%);
-    --sub-accent: hsl(280, 100%, 50%);
-
     --white: hsl(0, 0%, 100%);
     --white-50: hsla(0, 0%, 100%, 0.5);
     --white-30: hsla(0, 0%, 100%, 0.3);
+
+    --black: hsl(200, 100%, 5%);
+    --black-50: hsla(200, 100%, 5%, 0.5);
+    --black-30: hsla(200, 100%, 5%, 0.3);
+
+    --bg-color: hsl(200, 25%, 15%);
+    --main-accent: hsl(200, 100%, 50%);
+    --sub-accent: hsl(280, 100%, 50%);
+    --text-color: var(--white);
+    --subtext-color: var(--white-50);
+    --disabled-color: var(--white-30);
 }
 
 
@@ -59,7 +66,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.4;
-    color: var(--white);
+    color: var(--text-color);
 }
 
 
@@ -69,22 +76,24 @@ a {
 }
 
 
+svg * {
+    pointer-events: none;
+}
+
+
 .site-logo svg {
     display: block;
     width: 100%;
 }
 
 
-svg * {
-    pointer-events: none;
-}
-
-svg .main-accent {
-    stop-color: var(--main-accent);
-}
-
-svg .sub-accent {
-    stop-color: var(--sub-accent);
+[data-theme="light-mode"] {
+    --bg-color: hsl(0, 0%, 100%);
+    --main-accent: hsl(200, 100%, 50%);
+    --sub-accent: hsl(97, 81%, 48%);
+    --text-color: var(--black);
+    --subtext-color: var(--black-50);
+    --disabled-color: var(--black-30);
 }
 
 

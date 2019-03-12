@@ -67,7 +67,7 @@
         text-align: center;
         font-weight: 600;
         font-size: 24px;
-        color: var(--white-50);
+        color: var(--subtext-color);
     }
 
     .header .site-logo {
@@ -117,7 +117,7 @@
         flex-wrap: wrap;
         margin-top: 30px;
         font-weight: 600;
-        color: var(--white-30);
+        color: var(--disabled-color);
     }
 
     .links a {
@@ -132,7 +132,7 @@
     }
 
     .links a:hover {
-        color: var(--white);
+        color: var(--text-color);
     }
 
     .links a:hover::before {
