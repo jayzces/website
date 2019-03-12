@@ -69,6 +69,25 @@ a {
 }
 
 
+.site-logo svg {
+    display: block;
+    width: 100%;
+}
+
+
+svg * {
+    pointer-events: none;
+}
+
+svg .main-accent {
+    stop-color: var(--main-accent);
+}
+
+svg .sub-accent {
+    stop-color: var(--sub-accent);
+}
+
+
 @media all and (max-width: 480px) {
 
     body {

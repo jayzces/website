@@ -5,8 +5,7 @@
             <div class="page__content">
                 <div class="header">Hi, I'm
                     <div class="site-logo">
-                        <div class="site-logo__ln">Hermosa</div>
-                        <div class="site-logo__fn">Mary Louise</div>
+                        <SiteLogo />
                     </div>
                 </div>
 
@@ -24,11 +23,15 @@
 </template>
 
 <script>
+    import SiteLogo from '@/svgs/logo.svg'
+
     export default {
-        name: 'App'
+        name: 'App',
+        components: {
+            SiteLogo
+        }
     }
 </script>
-
 
 <style scoped>
     .app {
@@ -36,7 +39,7 @@
     }
 
     .progress-bar {
-        background-image: linear-gradient(to left,
+        background-image: linear-gradient(to right,
             var(--main-accent),
             var(--sub-accent));
         position: absolute;
@@ -68,38 +71,17 @@
     }
 
     .header .site-logo {
-        margin-top: -12px;
+        margin: 15px auto 0;
     }
+
 
     .site-logo {
-        position: relative;
-        font-weight: normal;
+        width: 320px;
     }
 
-    .site-logo__ln {
-        background-image: linear-gradient(to left,
-            var(--main-accent),
-            var(--sub-accent));
-        line-height: 95px;
-        text-transform: uppercase;
-        font-weight: 800;
-        font-size: 72px;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .site-logo__fn {
-        position: relative;
-        margin-top: -52px;
-        line-height: 56px;
-        text-transform: lowercase;
-        font-family: 'Cattieshine', cursive;
-        font-size: 56px;
-        color: var(--white);
-    }
 
     .landing-page p {
-        margin: 30px auto 0;
+        margin: 12px auto 0;
         max-width: 500px;
         line-height: 24px;
         text-align: center;
@@ -115,7 +97,7 @@
     .links a::before,
     .main-link::before {
         content: "";
-        background-image: linear-gradient(to left,
+        background-image: linear-gradient(to right,
             var(--main-accent),
             var(--sub-accent));
         display: block;
@@ -168,22 +150,11 @@
         }
 
         .site-logo {
-            margin-top: -8px;
-        }
-
-        .site-logo__ln {
-            line-height: 74px;
-            font-size: 56px;
-        }
-
-        .site-logo__fn {
-            margin-top: -41px;
-            line-height: 42px;
-            font-size: 42px;
+            width: 260px;
         }
 
         .landing-page p {
-            margin-top: 20px;
+            margin-top: 10px;
             line-height: 22px;
         }
 
