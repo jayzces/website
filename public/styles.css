@@ -43,12 +43,37 @@
     --black-30: hsla(200, 100%, 5%, 0.3);
 }
 
+/*********************************** themes ***********************************/
+[data-theme="noire"] {
+    --bg-color: hsl(200, 25%, 15%);
+    --main-accent: hsl(200, 100%, 50%);
+    --sub-accent: hsl(280, 100%, 50%);
+    --text-color: var(--white);
+    --subtext-color: var(--white-50);
+    --disabled-color: var(--white-30);
+}
+
+[data-theme="blanc"] {
+    --bg-color: hsl(0, 0%, 100%);
+    --main-accent: hsl(200, 100%, 50%);
+    --sub-accent: hsl(97, 81%, 48%);
+    --text-color: var(--black);
+    --subtext-color: var(--black-50);
+    --disabled-color: var(--black-30);
+}
+/******************************************************************************/
+
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
     transition: background 200ms;
+}
+
+
+html {
+    scroll-behavior: smooth;
 }
 
 
@@ -80,23 +105,10 @@ svg * {
     width: 100%;
 }
 
-/* themes */
-[data-theme="noire"] {
-    --bg-color: hsl(200, 25%, 15%);
-    --main-accent: hsl(200, 100%, 50%);
-    --sub-accent: hsl(280, 100%, 50%);
-    --text-color: var(--white);
-    --subtext-color: var(--white-50);
-    --disabled-color: var(--white-30);
-}
 
-[data-theme="blanc"] {
-    --bg-color: hsl(0, 0%, 100%);
-    --main-accent: hsl(200, 100%, 50%);
-    --sub-accent: hsl(97, 81%, 48%);
-    --text-color: var(--black);
-    --subtext-color: var(--black-50);
-    --disabled-color: var(--black-30);
+.page {
+    padding-top: 5px; /* progress-bar height */
+    min-height: 100vh;
 }
 
 
