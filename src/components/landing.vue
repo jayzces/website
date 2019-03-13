@@ -66,6 +66,7 @@
         text-transform: uppercase;
         font-weight: 700;
         z-index: 0;
+        color: inherit;
     }
 
     .links a::before,
@@ -99,6 +100,7 @@
         display: inline-block;
         transition: all 200ms ease-in-out;
         z-index: 0;
+        color: inherit;
     }
 
     .links a::before {

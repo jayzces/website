@@ -24,6 +24,7 @@
     "homepage": "https://github.com/jayzces/website#readme",
     "dependencies": {
         "axios": "^0.18.0",
+        "dotenv": "^7.0.0",
         "node-fetch": "^2.3.0",
         "vue": "^2.6.8",
         "vue-svg-loader": "^0.12.0"

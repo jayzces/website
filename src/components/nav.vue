@@ -1,7 +1,8 @@
 <template>
     <nav class="nav">
         <a href="#home" class="logo-link">
-            <NavLogo />
+            <NavLogo v-if="isDesktop" />
+            <NavLogo2 v-else />
         </a>
         <a href="#my-projects">My Projects</a>
         <a href="">My Résumé</a>
@@ -13,20 +14,42 @@
 <script>
     import Eventbus from '@/modules/eventbus'
     import NavLogo from '@/svgs/logo_left.svg'
+    import NavLogo2 from '@/svgs/logo_center.svg'
 
     export default {
         name: 'Nav',
-        components: { NavLogo },
+        components: { NavLogo, NavLogo2 },
+        data: function() {
+            return {
+                isDesktop: true
+            }
+        },
+        methods: {
+            checkWindowWidth: function() {
+                if (window.innerWidth <= 690) {
+                    this.isDesktop = false
+                } else {
+                    this.isDesktop = true
+                }
+            }
+        },
         mounted: function() {
             Eventbus.$on('showNav', () => {
                 let nav = document.querySelector('.nav')
+                let projectsLink = nav.querySelector('a:nth-child(2)')
                 nav.classList.add('visible')
+                projectsLink.setAttribute('class', 'active')
             })
 
             Eventbus.$on('hideNav', () => {
                 let nav = document.querySelector('.nav')
+                let projectsLink = nav.querySelector('a:nth-child(2)')
                 nav.classList.remove('visible')
+                projectsLink.setAttribute('class', '')
             })
+
+            this.checkWindowWidth()
+            window.addEventListener('resize', this.checkWindowWidth)
         }
     }
 </script>
@@ -100,6 +123,39 @@
 
     .nav svg {
         height: 40px;
-        --sub-accent: var(--main-accent);
+    }
+
+
+    @media all and (max-width: 860px) {
+        .nav a {
+            font-size: 14px;
+        }
+
+        .nav a:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+
+    @media all and (min-width: 691px) {
+        .nav svg {
+            --sub-accent: var(--main-accent);
+        }
+    }
+
+    @media all and (max-width: 690px) {
+        .nav {
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0 15px;
+            height: 50px;
+        }
+
+        .nav a:not(.logo-link) {
+            display: none;
+        }
+
+        .nav svg {
+            height: 35px;
+        }
     }
 </style>
