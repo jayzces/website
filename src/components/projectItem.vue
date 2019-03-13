@@ -30,7 +30,8 @@
             }
         },
         created: function() {
-            axios.get(`http://localhost:9000/preview?repo=${this.title}`)
+            // axios.get(`http://localhost:9000/preview?repo=${this.title}`)
+            axios.get(`https://beta.louisehemosa.com/.netlify/functions/preview?repo=${this.title}`)
                 .then(response => {
                     if (response.data != 'none')
                         this.preview_url = response.data

@@ -31,7 +31,8 @@
             }
         },
         created: function() {
-            axios.get('http://localhost:9000/github')
+            // axios.get('http://localhost:9000/github')
+            axios.get(`https://beta.louisehemosa.com/.netlify/functions/github`)
                 .then(response => (this.data = response.data))
         },
         mounted: function() {
