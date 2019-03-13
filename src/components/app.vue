@@ -51,6 +51,7 @@
     }
 
     .page {
+        background-color: var(--bg-color);
         min-height: 100vh;
     }
 
@@ -92,6 +93,7 @@
         display: inline-block;
         text-transform: uppercase;
         font-weight: 700;
+        z-index: 0;
     }
 
     .links a::before,
@@ -124,6 +126,7 @@
         position: relative;
         display: inline-block;
         transition: all 200ms ease-in-out;
+        z-index: 0;
     }
 
     .links a::before {

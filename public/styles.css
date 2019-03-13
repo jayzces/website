@@ -41,13 +41,6 @@
     --black: hsl(200, 100%, 5%);
     --black-50: hsla(200, 100%, 5%, 0.5);
     --black-30: hsla(200, 100%, 5%, 0.3);
-
-    --bg-color: hsl(200, 25%, 15%);
-    --main-accent: hsl(200, 100%, 50%);
-    --sub-accent: hsl(280, 100%, 50%);
-    --text-color: var(--white);
-    --subtext-color: var(--white-50);
-    --disabled-color: var(--white-30);
 }
 
 
@@ -55,11 +48,11 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    transition: background 200ms;
 }
 
 
 body {
-    background-color: var(--bg-color);
     margin: 0;
     padding: 0;
     font-family: 'Assistant', sans-serif;
@@ -86,8 +79,17 @@ svg * {
     width: 100%;
 }
 
+/* themes */
+[data-theme="noire"] {
+    --bg-color: hsl(200, 25%, 15%);
+    --main-accent: hsl(200, 100%, 50%);
+    --sub-accent: hsl(280, 100%, 50%);
+    --text-color: var(--white);
+    --subtext-color: var(--white-50);
+    --disabled-color: var(--white-30);
+}
 
-[data-theme="light-mode"] {
+[data-theme="blanc"] {
     --bg-color: hsl(0, 0%, 100%);
     --main-accent: hsl(200, 100%, 50%);
     --sub-accent: hsl(97, 81%, 48%);
