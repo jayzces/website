@@ -51,7 +51,6 @@
     }
 
     .page {
-        background-color: var(--bg-color);
         min-height: 100vh;
     }
 
