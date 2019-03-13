@@ -136,12 +136,6 @@
         }
     }
 
-    @media all and (min-width: 691px) {
-        .nav svg {
-            --sub-accent: var(--main-accent);
-        }
-    }
-
     @media all and (max-width: 690px) {
         .nav {
             justify-content: center;
