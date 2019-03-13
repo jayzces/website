@@ -13,14 +13,19 @@
             let page = document.querySelector('.projects-page')
             let currentScroll = window.pageYOffset
             window.addEventListener('scroll', () => {
-                if (window.pageYOffset >= page.offsetTop
-                    && window.pageYOffset > currentScroll) {
+                let pageTop = page.offsetTop
+                let pageBottom = pageTop + page.clientHeight
+                let windowOffset = window.pageYOffset
+
+                if (windowOffset >= pageTop
+                    && windowOffset <= pageBottom
+                    && windowOffset > currentScroll) {
                     Eventbus.$emit('showNav')
                 } else {
                     Eventbus.$emit('hideNav')
                 }
 
-                currentScroll = window.pageYOffset
+                currentScroll = windowOffset
             })
         }
     }
