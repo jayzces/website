@@ -41,25 +41,29 @@
     --black: hsl(200, 100%, 5%);
     --black-50: hsla(200, 100%, 5%, 0.5);
     --black-30: hsla(200, 100%, 5%, 0.3);
+
+    --blue: hsl(200, 100%, 50%);
 }
 
 /*********************************** themes ***********************************/
 [data-theme="noire"] {
     --bg-color: hsl(200, 25%, 15%);
-    --main-accent: hsl(200, 100%, 50%);
+    --main-accent: var(--blue);
     --sub-accent: hsl(280, 100%, 50%);
     --text-color: var(--white);
     --subtext-color: var(--white-50);
     --disabled-color: var(--white-30);
+    --preview-color: var(--black);
 }
 
 [data-theme="blanc"] {
     --bg-color: hsl(0, 0%, 100%);
-    --main-accent: hsl(200, 100%, 50%);
+    --main-accent: var(--blue);
     --sub-accent: hsl(97, 81%, 48%);
     --text-color: var(--black);
     --subtext-color: var(--black-50);
     --disabled-color: var(--black-30);
+    --preview-color: hsl(200, 100%, 95%);
 }
 /******************************************************************************/
 

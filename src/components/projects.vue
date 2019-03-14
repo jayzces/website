@@ -31,8 +31,7 @@
             }
         },
         created: function() {
-            // axios.get('http://localhost:9000/github')
-            axios.get(`https://beta.louisehermosa.com/.netlify/functions/github`)
+            axios.get(`${process.env.VUE_APP_FUNCTIONS_URL}/github`)
                 .then(response => (this.data = response.data))
         },
         mounted: function() {

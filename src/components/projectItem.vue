@@ -30,8 +30,7 @@
             }
         },
         created: function() {
-            // axios.get(`http://localhost:9000/preview?repo=${this.title}`)
-            axios.get(`https://beta.louisehermosa.com/.netlify/functions/preview?repo=${this.title}`)
+            axios.get(`${process.env.VUE_APP_FUNCTIONS_URL}/preview?repo=${this.title}`)
                 .then(response => {
                     if (response.data != 'none')
                         this.preview_url = response.data
@@ -48,12 +47,13 @@
     }
 
     .preview {
+        background-color: var(--preview-color);
         position: relative;
         display: block;
         width: 100%;
         border: 2px solid var(--main-accent);
         border-image-slice: 2;
-        border-image-source: linear-gradient(to left,
+        border-image-source: linear-gradient(to right,
             var(--main-accent),
             var(--sub-accent));
     }
