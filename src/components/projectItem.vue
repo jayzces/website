@@ -150,7 +150,7 @@
         }
 
         .project-item:not(:first-child) {
-            margin-top: 20px;
+            margin: 10px 0;
         }
 
         p {

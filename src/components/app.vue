@@ -4,6 +4,7 @@
         <Nav></Nav>
         <LandingPage></LandingPage>
         <ProjectsPage></ProjectsPage>
+        <Footer></Footer>
     </div>
 </template>
 
@@ -13,7 +14,8 @@
         components: {
             Nav: require('./nav').default,
             LandingPage: require('./landing').default,
-            ProjectsPage: require('./projects').default
+            ProjectsPage: require('./projects').default,
+            Footer: require('./footer').default
         }
     }
 </script>
