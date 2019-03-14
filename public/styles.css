@@ -43,11 +43,13 @@
     --black-30: hsla(200, 100%, 5%, 0.3);
 
     --blue: hsl(200, 100%, 50%);
+
+    --navy: hsl(200, 25%, 15%);
 }
 
 /*********************************** themes ***********************************/
 [data-theme="noire"] {
-    --bg-color: hsl(200, 25%, 15%);
+    --bg-color: var(--navy);
     --main-accent: var(--blue);
     --sub-accent: hsl(280, 100%, 50%);
     --text-color: var(--white);

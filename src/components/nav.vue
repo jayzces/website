@@ -68,6 +68,7 @@
         opacity: 0;
         z-index: 1;
         transition: top 200ms, opacity 200ms;
+        box-shadow: 0 5px 10px var(--black-30);
     }
 
     .visible {
