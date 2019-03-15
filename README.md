@@ -2,6 +2,8 @@ website
 ========
 Source code for LouiseHermosa.com
 
+![preview](preview.png)
+
 # Run
 ### Local server
 ```
