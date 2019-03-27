@@ -10,7 +10,6 @@
         "functions": "netlify-lambda serve src/functions"
     },
     "dependencies": {
-        "@vue/cli-plugin-pwa": "^3.5.1",
         "axios": "^0.18.0",
         "dotenv": "^7.0.0",
         "node-fetch": "^2.3.0",
@@ -19,6 +18,7 @@
         "vue-svg-loader": "^0.12.0"
     },
     "devDependencies": {
+        "@vue/cli-plugin-pwa": "^3.5.1",
         "@vue/cli-service": "^3.5.2",
         "netlify-lambda": "^1.4.2",
         "vue-template-compiler": "^2.6.8"
