@@ -3,12 +3,12 @@
     "short_name": "HML",
     "icons": [
         {
-            "src": "https://louisehermosa.com/icons/android-chrome-192x192.png",
+            "src": "https://5c9b9d1bdd07f90007fec834--clever-pike-f48452.netlify.comicons/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://louisehermosa.com/icons/android-chrome-512x512.png",
+            "src": "https://5c9b9d1bdd07f90007fec834--clever-pike-f48452.netlify.comicons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
