@@ -2,36 +2,38 @@
     "name": "website",
     "version": "1.0.0",
     "description": "Source code for LouiseHermosa.com",
-    "main": "index.js",
+    "author": "Mary Louise Hermosa",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build && netlify-lambda build src/functions",
+        "test": "echo \"Error: no test specified\" && exit 1",
         "functions": "netlify-lambda serve src/functions"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jayzces/website.git"
-    },
-    "keywords": [
-        "website"
-    ],
-    "author": "Mary Louise Hermosa",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/jayzces/website/issues"
-    },
-    "homepage": "https://github.com/jayzces/website#readme",
     "dependencies": {
         "axios": "^0.18.0",
         "dotenv": "^7.0.0",
         "node-fetch": "^2.3.0",
+        "register-service-worker": "^1.6.2",
         "vue": "^2.6.8",
         "vue-svg-loader": "^0.12.0"
     },
     "devDependencies": {
-        "@vue/cli-service": "^3.5.0",
+        "@vue/cli-plugin-pwa": "^3.5.1",
+        "@vue/cli-service": "^3.5.2",
         "netlify-lambda": "^1.4.2",
         "vue-template-compiler": "^2.6.8"
+    },
+    "bugs": {
+        "url": "https://github.com/jayzces/website/issues"
+    },
+    "homepage": "https://github.com/jayzces/website#readme",
+    "keywords": [
+        "website"
+    ],
+    "license": "ISC",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jayzces/website.git"
     }
 }

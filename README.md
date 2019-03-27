@@ -8,9 +8,16 @@ Source code for LouiseHermosa.com
 
 # Run
 ### Local server
+Main server:
 ```
 npm run serve
 ```
+
+API server:
+```
+npm run functions
+```
+
 ### Production Build
 ```
 npm run build
