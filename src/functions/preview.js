@@ -11,7 +11,8 @@ exports.handler = async (event, context) => {
             statusCode: 200,
             body: getURL(data),
             headers: {
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
+                'Cache-Control': 'public, max-age=604800'
             }
         }))
         .catch(error => ({ statusCode: 422, body: String(error) }))
