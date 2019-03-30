@@ -48,7 +48,8 @@
 }
 
 /*********************************** themes ***********************************/
-[data-theme="noire"] {
+[data-theme="noire"],
+html {
     --bg-color: var(--navy);
     --main-accent: var(--blue);
     --sub-accent: hsl(280, 100%, 50%);
