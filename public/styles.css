@@ -58,6 +58,18 @@
     --preview-color: var(--black);
 }
 
+@media (prefers-color-scheme: dark) {
+    [data-theme="detect"] {
+        --bg-color: var(--navy);
+        --main-accent: var(--blue);
+        --sub-accent: hsl(280, 100%, 50%);
+        --text-color: var(--white);
+        --subtext-color: var(--white-50);
+        --disabled-color: var(--white-30);
+        --preview-color: var(--black);
+    }
+}
+
 [data-theme="blanc"] {
     --bg-color: hsl(0, 0%, 100%);
     --main-accent: var(--blue);
@@ -66,6 +78,18 @@
     --subtext-color: var(--black-50);
     --disabled-color: var(--black-30);
     --preview-color: hsl(200, 100%, 95%);
+}
+
+@media (prefers-color-scheme: light) {
+    [data-theme="detect"] {
+        --bg-color: hsl(0, 0%, 100%);
+        --main-accent: var(--blue);
+        --sub-accent: hsl(97, 81%, 48%);
+        --text-color: var(--black);
+        --subtext-color: var(--black-50);
+        --disabled-color: var(--black-30);
+        --preview-color: hsl(200, 100%, 95%);
+    }
 }
 /******************************************************************************/
 
