@@ -5,7 +5,6 @@
             <NavLogo2 v-else />
         </a>
         <a href="#my-projects">My Projects</a>
-        <a href="">My Résumé</a>
         <a href="https://github.com/jayzces" target="_blank"> @jayzces on Github</a>
         <a href="mailto:louise@channelfix.com">louise@channelfix.com</a>
     </nav>
@@ -112,12 +111,12 @@
     }
 
     .nav a:not(.logo-link):hover,
-    .nav .active {
+    .nav .active.active {
         color: var(--text-color);
     }
 
     .nav a:not(.logo-link):hover::before,
-    .nav .active::before {
+    .nav .active.active::before {
         max-height: 100%;
     }
 

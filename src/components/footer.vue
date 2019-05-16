@@ -1,7 +1,8 @@
 <template>
     <footer>
-        <div>Mary Louise Hermosa</div>
-        &copy; Copyright 2019
+        <div class="name">Mary Louise Hermosa</div>
+        <p>&copy; 2019 Mary Louise Hermosa. All rights reserved.</p>
+        <p>This site was made with <a href="https://vuejs.org/">Vue.js</a> and <a href="https://www.netlify.com/products/functions/">Netlify Functions</a>, and hosted on <a href="https://www.netlify.com/">Netlify</a>.</p>
     </footer>
 </template>
 
@@ -20,18 +21,26 @@
         color: var(--disabled-color);
     }
 
-    div {
+    .name {
         text-transform: lowercase;
         font-family: 'Cattieshine', cursive;
         font-size: 24px;
         color: var(--text-color);
     }
 
+    p {
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    p:first-of-type {
+        margin-top: 5px;
+    }
 
     @media all and (max-width: 640px) {
         footer {
             margin-top: 0;
-            padding: 20px 0;
+            padding: 20px 15px;
         }
     }
 </style>
