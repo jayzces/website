@@ -11,7 +11,6 @@
 
             <div class="links">
                 <a href="#my-projects">My Projects</a>
-                <a href="">My Résumé</a>
                 <a href="https://github.com/jayzces" target="_blank"> @jayzces on Github</a>
                 <a href="mailto:louise@channelfix.com">louise@channelfix.com</a>
             </div>
