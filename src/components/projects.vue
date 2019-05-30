@@ -63,7 +63,7 @@
 
     .no-projects {
         text-align: center;
-        color: var(--disabled-color);
+        color: var(--subtext-color);
     }
 
     h2 {

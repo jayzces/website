@@ -1,6 +1,6 @@
 <template>
     <nav class="nav">
-        <a href="#home" class="logo-link">
+        <a href="#home" class="logo-link">logo
             <NavLogo v-if="isDesktop" />
             <NavLogo2 v-else />
         </a>
@@ -79,6 +79,7 @@
 
     .logo-link {
         display: inline-block;
+        font-size: 0;
     }
 
 
@@ -86,7 +87,7 @@
         position: relative;
         z-index: 0;
         font-weight: 600;
-        color: var(--disabled-color);
+        color: var(--subtext-color);
     }
 
     .nav a:not(.logo-link):not(:first-child) {

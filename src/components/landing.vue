@@ -92,7 +92,7 @@
         flex-wrap: wrap;
         margin-top: 30px;
         font-weight: 600;
-        color: var(--disabled-color);
+        color: var(--subtext-color);
     }
 
     .links a {

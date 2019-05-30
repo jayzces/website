@@ -58,7 +58,6 @@ html {
     --sub-accent: var(--violet);
     --text-color: var(--white);
     --subtext-color: var(--white-50);
-    --disabled-color: var(--white-30);
     --preview-color: var(--black);
     --box-shadow: var(--black-30);
 }
@@ -70,7 +69,6 @@ html {
         --sub-accent: var(--violet);
         --text-color: var(--white);
         --subtext-color: var(--white-50);
-        --disabled-color: var(--white-30);
         --preview-color: var(--black);
         --box-shadow: var(--black-30);
     }
@@ -82,7 +80,6 @@ html {
     --sub-accent: var(--green);
     --text-color: var(--black);
     --subtext-color: var(--black-50);
-    --disabled-color: var(--black-30);
     --preview-color: hsl(200, 100%, 95%);
     --box-shadow: var(--black-30);
 }
@@ -94,7 +91,6 @@ html {
         --sub-accent: var(--green);
         --text-color: var(--black);
         --subtext-color: var(--black-50);
-        --disabled-color: var(--black-30);
         --preview-color: hsl(200, 100%, 95%);
         --box-shadow: var(--black-30);
     }
@@ -107,7 +103,6 @@ html {
     --sub-accent: hsl(353, 93%, 80%);
     --text-color: hsl(340, 82%, 15%);
     --subtext-color: hsla(340, 82%, 15%, 0.7);
-    --disabled-color: hsla(340, 82%, 15%, 0.5);
     --preview-color: hsl(0, 100%, 97%);
     --box-shadow: hsla(340, 82%, 15%, 0.3);
 }
@@ -119,7 +114,6 @@ html {
     --sub-accent: hsl(18, 96%, 68%);
     --text-color: var(--white);
     --subtext-color: var(--white-70);
-    --disabled-color: var(--white-50);
     --preview-color: hsl(0, 100%, 10%);
     --box-shadow: hsla(0, 100%, 5%, 0.3);
 }
@@ -131,7 +125,6 @@ html {
     --sub-accent: hsl(179, 67%, 55%);
     --text-color: hsl(206, 77%, 30%);
     --subtext-color: hsla(206, 77%, 30%, 0.7);
-    --disabled-color: hsla(206, 77%, 30%, 0.5);
     --preview-color: hsl(179, 37%, 90%);
     --box-shadow: hsla(206, 77%, 30%, 0.3);
 }
@@ -143,7 +136,6 @@ html {
     --sub-accent: hsl(11, 100%, 69%);
     --text-color: hsl(26, 100%, 85%);
     --subtext-color: hsl(11, 80%, 78%);
-    --disabled-color: hsla(11, 80%, 78%, 0.7);
     --preview-color: hsl(269, 50%, 20%);
     --box-shadow: hsla(269, 50%, 20%, 0.5);
 }
@@ -155,7 +147,6 @@ html {
     --sub-accent: hsl(356, 100%, 85%);
     --text-color: hsl(200, 87%, 30%);
     --subtext-color: hsl(179, 42%, 57%);
-    --disabled-color: hsl(179, 42%, 57%);
     --preview-color: hsl(21, 76%, 95%);
     --box-shadow: hsla(200, 87%, 20%, 0.1);
 }

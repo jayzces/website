@@ -101,7 +101,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
         font-weight: 600;
-        color: var(--disabled-color);
+        color: var(--subtext-color);
         z-index: 0;
     }
 
