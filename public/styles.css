@@ -35,16 +35,19 @@
 
 :root {
     --white: hsl(0, 0%, 100%);
+    --white-70: hsla(0, 0%, 100%, 0.7);
     --white-50: hsla(0, 0%, 100%, 0.5);
     --white-30: hsla(0, 0%, 100%, 0.3);
 
+    /* has blue undertones */
     --black: hsl(200, 100%, 5%);
     --black-50: hsla(200, 100%, 5%, 0.5);
     --black-30: hsla(200, 100%, 5%, 0.3);
 
     --blue: hsl(200, 100%, 50%);
-
+    --green: hsl(97, 81%, 48%);
     --navy: hsl(200, 25%, 15%);
+    --violet: hsl(280, 100%, 50%);
 }
 
 /*********************************** themes ***********************************/
@@ -52,45 +55,109 @@
 html {
     --bg-color: var(--navy);
     --main-accent: var(--blue);
-    --sub-accent: hsl(280, 100%, 50%);
+    --sub-accent: var(--violet);
     --text-color: var(--white);
     --subtext-color: var(--white-50);
     --disabled-color: var(--white-30);
     --preview-color: var(--black);
+    --box-shadow: var(--black-30);
 }
 
 @media (prefers-color-scheme: dark) {
     [data-theme="detect"] {
         --bg-color: var(--navy);
         --main-accent: var(--blue);
-        --sub-accent: hsl(280, 100%, 50%);
+        --sub-accent: var(--violet);
         --text-color: var(--white);
         --subtext-color: var(--white-50);
         --disabled-color: var(--white-30);
         --preview-color: var(--black);
+        --box-shadow: var(--black-30);
     }
 }
 
 [data-theme="blanc"] {
     --bg-color: hsl(0, 0%, 100%);
     --main-accent: var(--blue);
-    --sub-accent: hsl(97, 81%, 48%);
+    --sub-accent: var(--green);
     --text-color: var(--black);
     --subtext-color: var(--black-50);
     --disabled-color: var(--black-30);
     --preview-color: hsl(200, 100%, 95%);
+    --box-shadow: var(--black-30);
 }
 
 @media (prefers-color-scheme: light) {
     [data-theme="detect"] {
         --bg-color: hsl(0, 0%, 100%);
         --main-accent: var(--blue);
-        --sub-accent: hsl(97, 81%, 48%);
+        --sub-accent: var(--green);
         --text-color: var(--black);
         --subtext-color: var(--black-50);
         --disabled-color: var(--black-30);
         --preview-color: hsl(200, 100%, 95%);
+        --box-shadow: var(--black-30);
     }
+}
+
+/* https://colorpalettes.com/palette/204 */
+[data-theme="rose"] {
+    --bg-color: hsl(0, 100%, 99%);
+    --main-accent: hsl(340, 82%, 52%);
+    --sub-accent: hsl(353, 93%, 80%);
+    --text-color: hsl(340, 82%, 15%);
+    --subtext-color: hsla(340, 82%, 15%, 0.7);
+    --disabled-color: hsla(340, 82%, 15%, 0.5);
+    --preview-color: hsl(0, 100%, 97%);
+    --box-shadow: hsla(340, 82%, 15%, 0.3);
+}
+
+/* https://colorpalettes.net/color-palette-4008/ */
+[data-theme="beignet"] {
+    --bg-color: hsl(0, 100%, 5%);
+    --main-accent: hsl(344, 91%, 61%);
+    --sub-accent: hsl(18, 96%, 68%);
+    --text-color: var(--white);
+    --subtext-color: var(--white-70);
+    --disabled-color: var(--white-50);
+    --preview-color: hsl(0, 100%, 10%);
+    --box-shadow: hsla(0, 100%, 5%, 0.3);
+}
+
+/* https://www.canva.com/learn/brand-color-palette/?v=2&utm_expid=.15bWEdI1R-2FmuAAOAJm5w.1 #3 */
+[data-theme="mer"] {
+    --bg-color: hsl(179, 67%, 97%);
+    --main-accent: hsl(203, 67%, 50%);
+    --sub-accent: hsl(179, 67%, 55%);
+    --text-color: hsl(206, 77%, 30%);
+    --subtext-color: hsla(206, 77%, 30%, 0.7);
+    --disabled-color: hsla(206, 77%, 30%, 0.5);
+    --preview-color: hsl(179, 37%, 90%);
+    --box-shadow: hsla(206, 77%, 30%, 0.3);
+}
+
+/* https://www.canva.com/learn/brand-color-palette/?v=2&utm_expid=.15bWEdI1R-2FmuAAOAJm5w.1 #4 */
+[data-theme="coucher"] {
+    --bg-color: hsl(269, 50%, 10%);
+    --main-accent: hsl(269, 50%, 50%);
+    --sub-accent: hsl(11, 100%, 69%);
+    --text-color: hsl(26, 100%, 85%);
+    --subtext-color: hsl(11, 80%, 78%);
+    --disabled-color: hsla(11, 80%, 78%, 0.7);
+    --preview-color: hsl(269, 50%, 20%);
+    --box-shadow: hsla(269, 50%, 20%, 0.5);
+}
+
+/* https://www.canva.com/learn/brand-color-palette/?v=2&utm_expid=.15bWEdI1R-2FmuAAOAJm5w.1  #12 */
+[data-theme="plage"] {
+    --bg-color: hsl(21, 76%, 98%);
+    --main-accent: hsl(200, 87%, 62%);
+    --sub-accent: hsl(356, 100%, 85%);
+    --text-color: hsl(200, 87%, 30%);
+    --subtext-color: hsl(179, 42%, 57%);
+    --disabled-color: hsl(179, 42%, 57%);
+    --preview-color: hsl(21, 76%, 95%);
+    --box-shadow: hsla(200, 87%, 20%, 0.1);
 }
 /******************************************************************************/
 
@@ -99,7 +166,7 @@ html {
 *::before,
 *::after {
     box-sizing: border-box;
-    transition: background 200ms;
+    transition: background-color 200ms ease-in-out;
 }
 
 

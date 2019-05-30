@@ -5,6 +5,7 @@
         <LandingPage></LandingPage>
         <ProjectsPage></ProjectsPage>
         <Footer></Footer>
+        <ThemeSelector></ThemeSelector>
     </div>
 </template>
 
@@ -15,7 +16,8 @@
             Nav: require('./nav').default,
             LandingPage: require('./landing').default,
             ProjectsPage: require('./projects').default,
-            Footer: require('./footer').default
+            Footer: require('./footer').default,
+            ThemeSelector: require('./themeSelector').default
         }
     }
 </script>
