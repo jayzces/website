@@ -31,13 +31,13 @@ import { setTimeout, clearTimeout } from 'timers';
                 openList: false,
                 theme: [
                     {
-                        name: 'noire',
-                        mainColor: 'hsl(200, 100%, 50%)',
-                        subColor: 'hsl(280, 100%, 50%)'
-                    }, {
                         name: 'blanc',
                         mainColor: 'hsl(200, 100%, 50%)',
                         subColor: 'hsl(97, 81%, 48%)'
+                    }, {
+                        name: 'noire',
+                        mainColor: 'hsl(200, 100%, 50%)',
+                        subColor: 'hsl(280, 100%, 50%)'
                     }, {
                         name: 'rose',
                         mainColor: 'hsl(340, 82%, 52%)',
@@ -78,7 +78,7 @@ import { setTimeout, clearTimeout } from 'timers';
             }
         },
         mounted: function() {
-            this.selected = this.theme[0]
+            this.selected = this.theme[1]
         }
     }
 </script>
