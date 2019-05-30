@@ -7,12 +7,12 @@
                 </div>
             </div>
 
-            <p>I’m a front end web developer and web designer at <a href="https://channelfix.com" target="_blank" class="main-link">ChannelFix.com</a> and <a href="https://bposeats.com" target="_blank" class="main-link">BPOSeats.com</a>.  I specialize in UI design, and templating. Currently exploring new front end technologies.</p>
+            <p>I’m a front end web developer and web designer at <a href="https://channelfix.com" target="_blank" rel="noreferrer" class="main-link">ChannelFix.com</a> and <a href="https://bposeats.com" target="_blank" rel="noreferrer" class="main-link">BPOSeats.com</a>.  I specialize in UI design, and templating. Currently exploring new front end technologies.</p>
 
             <div class="links">
                 <a href="#my-projects">My Projects</a>
-                <a href="https://resume.louisehermosa.com/" target="_blank">My Resume</a>
-                <a href="https://github.com/jayzces" target="_blank"> @jayzces on Github</a>
+                <a href="https://resume.louisehermosa.com/" target="_blank" rel="noreferrer">My Resume</a>
+                <a href="https://github.com/jayzces" target="_blank" rel="noreferrer"> @jayzces on Github</a>
                 <a href="mailto:louise@channelfix.com">louise@channelfix.com</a>
             </div>
         </div>
