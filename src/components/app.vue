@@ -22,6 +22,10 @@
     }
 </script>
 
+<style>
+    @import "../styles.css";
+</style>
+
 <style scoped>
     .app {
         position: relative;
