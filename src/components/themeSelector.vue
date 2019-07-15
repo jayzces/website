@@ -25,6 +25,10 @@
             themes: {
                 type: Array,
                 required: true
+            },
+            currentSelected: {
+                type: Object,
+                required: true
             }
         },
         data: function() {
@@ -68,7 +72,7 @@
             }
         },
         mounted: function() {
-            this.selected = this.themes[1]
+            this.selected = this.currentSelected
         }
     }
 </script>

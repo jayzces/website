@@ -8,6 +8,7 @@
         <Footer></Footer>
         <ThemeSelector
             v-bind:themes="themes"
+            v-bind:currentSelected="selected"
             v-on:themeChange="updateSelected"></ThemeSelector>
     </div>
 </template>
@@ -96,7 +97,9 @@
                 this.selected = theme
             }
         },
-        mounted: function() {
+        created: function() {
+            /* To change default theme, change this value and
+             * change `.detect` class variables in `styles.css` */
             this.selected = this.themes[1]
         }
     }
