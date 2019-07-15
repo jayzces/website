@@ -23,7 +23,7 @@
     },
     "homepage": "https://github.com/jayzces/website#readme",
     "dependencies": {
-        "axios": "^0.18.0",
+        "axios": "^0.19.0",
         "dotenv": "^7.0.0",
         "encoding": "^0.1.12",
         "node-fetch": "^2.3.0",

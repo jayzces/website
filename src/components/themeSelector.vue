@@ -1,25 +1,32 @@
 <template>
     <div class="theme-selector"
         v-bind:class="{opened: openList}"
-        v-on:click.self="openList = !openList">
+        v-on:click.self="toggleListOpen">
         <div class="list">
-            <div class="color"
-                v-for="color in theme"
+            <ThemeItem
+                v-for="color in themes"
                 v-bind:key="color.name"
-                v-bind:style="`--main: ${color.mainColor}; --sub: ${color.subColor}`"
-                v-on:click="select(color)"></div>
+                v-bind:theme="color"
+                v-on:clickItem="select(color)"></ThemeItem>
         </div>
-        <div class="color selected"
+        <ThemeItem class="selected"
             v-bind:class="{'scale-down': scaleDown}"
-            v-bind:style="`--main: ${selected.mainColor}; --sub: ${selected.subColor}`"
-            v-on:click="openList = !openList"></div>
+            v-bind:theme="selected"
+            v-on:clickItem="toggleListOpen"></ThemeItem>
     </div>
 </template>
 
 <script>
-import { setTimeout, clearTimeout } from 'timers';
+    import { setTimeout, clearTimeout } from 'timers'
+
     export default {
         name: 'ThemeSelector',
+        props: {
+            themes: {
+                type: Array,
+                required: true
+            }
+        },
         data: function() {
             return {
                 selected: {
@@ -28,39 +35,11 @@ import { setTimeout, clearTimeout } from 'timers';
                     subColor: ''
                 },
                 scaleDown: false,
-                openList: false,
-                theme: [
-                    {
-                        name: 'blanc',
-                        mainColor: 'hsl(200, 100%, 50%)',
-                        subColor: 'hsl(97, 81%, 48%)'
-                    }, {
-                        name: 'noire',
-                        mainColor: 'hsl(200, 100%, 50%)',
-                        subColor: 'hsl(280, 100%, 50%)'
-                    }, {
-                        name: 'rose',
-                        mainColor: 'hsl(340, 82%, 52%)',
-                        subColor: 'hsl(353, 93%, 80%)'
-                    }, {
-                        name: 'beignet',
-                        mainColor: 'hsl(344, 91%, 61%)',
-                        subColor: 'hsl(18, 96%, 68%)'
-                    }, {
-                        name: 'mer',
-                        mainColor: 'hsl(203, 67%, 50%)',
-                        subColor: 'hsl(179, 67%, 55%)'
-                    }, {
-                        name: 'coucher',
-                        mainColor: 'hsl(269, 50%, 50%)',
-                        subColor: 'hsl(11, 100%, 69%)'
-                    }, {
-                        name: 'plage',
-                        mainColor: 'hsl(200, 87%, 62%)',
-                        subColor: 'hsl(356, 100%, 85%)'
-                    }
-                ]
+                openList: false
             }
+        },
+        components: {
+            ThemeItem: require('./themeItem').default
         },
         methods: {
             select(color) {
@@ -72,13 +51,24 @@ import { setTimeout, clearTimeout } from 'timers';
 
                     let body = document.querySelector('body')
                     body.dataset.theme = color.name
+                    this.$emit('themeChange', this.selected)
 
                     clearTimeout(scaleTimeout)
                 }, 400)
+            },
+            toHSL(colorObj) {
+                return `hsl(${colorObj.h}, ${colorObj.s}%, ${colorObj.l}%)`
+            },
+            toggleListOpen() {
+                if (!this.openList)
+                    document.querySelector('body').classList.add('fixed')
+                else
+                    document.querySelector('body').classList.remove('fixed')
+                this.openList = !this.openList
             }
         },
         mounted: function() {
-            this.selected = this.theme[1]
+            this.selected = this.themes[1]
         }
     }
 </script>
@@ -116,27 +106,8 @@ import { setTimeout, clearTimeout } from 'timers';
         pointer-events: auto;
     }
 
-    .color {
-        background-image: linear-gradient(to right, var(--main), var(--sub));
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 200ms ease-in-out;
-    }
-
-    .list .color {
-        margin: 5px;
-        z-index: 1;
-    }
-
-    .list .color,
     .scale-down {
         transform: scale(0);
-    }
-
-    .opened .list .color {
-        transform: scale(1);
     }
 
     .selected {
