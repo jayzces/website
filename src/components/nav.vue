@@ -13,16 +13,17 @@
 
 <script>
     import Eventbus from '@/modules/eventbus'
-    import NavLogo from '@/svgs/logo_left.svg'
-    import NavLogo2 from '@/svgs/logo_center.svg'
 
     export default {
         name: 'Nav',
-        components: { NavLogo, NavLogo2 },
         data: function() {
             return {
                 isDesktop: true
             }
+        },
+        components: {
+            NavLogo: () => import('@/svgs/logo_left.svg'),
+            NavLogo2: () => import('@/svgs/logo_center.svg')
         },
         methods: {
             checkWindowWidth: function() {

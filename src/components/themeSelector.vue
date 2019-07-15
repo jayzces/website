@@ -1,7 +1,7 @@
 <template>
     <div class="theme-selector"
         v-bind:class="{opened: openList}"
-        v-on:click.self="toggleListOpen">
+        v-on:click.self="openList = !openList">
         <div class="list">
             <ThemeItem
                 v-for="color in themes"
@@ -12,7 +12,7 @@
         <ThemeItem class="selected"
             v-bind:class="{'scale-down': scaleDown}"
             v-bind:theme="selected"
-            v-on:clickItem="toggleListOpen"></ThemeItem>
+            v-on:clickItem="openList = !openList"></ThemeItem>
     </div>
 </template>
 
@@ -62,13 +62,6 @@
             },
             toHSL(colorObj) {
                 return `hsl(${colorObj.h}, ${colorObj.s}%, ${colorObj.l}%)`
-            },
-            toggleListOpen() {
-                if (!this.openList)
-                    document.querySelector('body').classList.add('fixed')
-                else
-                    document.querySelector('body').classList.remove('fixed')
-                this.openList = !this.openList
             }
         },
         mounted: function() {

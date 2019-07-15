@@ -177,11 +177,6 @@ body {
     color: var(--text-color);
 }
 
-body.fixed {
-    max-height: 100vh;
-    overflow: hidden;
-}
-
 
 a {
     text-decoration: none;

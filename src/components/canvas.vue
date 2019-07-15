@@ -11,7 +11,7 @@
                 required: true
             }
         },
-        data: function() {
+        data() {
             return {
                 config: {
                     maxParticles: 2,
@@ -21,7 +21,7 @@
                 }
             }
         },
-        mounted: function() {
+        mounted() {
             const canvas = document.querySelector('#playground'),
                 ctx = canvas.getContext('2d')
 

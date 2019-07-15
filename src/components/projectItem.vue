@@ -19,7 +19,12 @@
 
     export default {
         name: 'ProjectItem',
-        props: ['project'],
+        props: {
+            project: {
+                type: Object,
+                required: true
+            }
+        },
         data: function() {
             return {
                 demo_url: this.project.homepage,
@@ -29,7 +34,7 @@
                 preview_url: ''
             }
         },
-        created: function() {
+        created() {
             axios.get(`${process.env.VUE_APP_FUNCTIONS_URL}/preview?repo=${this.title}`)
                 .then(response => {
                     if (response.data != 'none')

@@ -1,22 +1,24 @@
 <template>
     <div class="app">
-        <Canvas v-bind:theme="selected"></Canvas>
+        <Canvas :theme="selected"></Canvas>
         <div class="progress-bar"></div>
         <Nav></Nav>
-        <LandingPage></LandingPage>
-        <ProjectsPage></ProjectsPage>
+        <main>
+            <LandingPage></LandingPage>
+            <ProjectsPage></ProjectsPage>
+        </main>
         <Footer></Footer>
         <ThemeSelector
-            v-bind:themes="themes"
-            v-bind:currentSelected="selected"
-            v-on:themeChange="updateSelected"></ThemeSelector>
+            :themes="themes"
+            :currentSelected="selected"
+            @themeChange="updateSelected"></ThemeSelector>
     </div>
 </template>
 
 <script>
     export default {
         name: 'App',
-        data: function() {
+        data() {
             return {
                 themes: [
                     {
@@ -85,19 +87,19 @@
             }
         },
         components: {
-            Canvas: require('./canvas').default,
+            Canvas: () => import('./canvas.vue'),
             Nav: require('./nav').default,
             LandingPage: require('./landing').default,
             ProjectsPage: require('./projects').default,
             Footer: require('./footer').default,
-            ThemeSelector: require('./themeSelector').default
+            ThemeSelector: () => import('./themeSelector.vue')
         },
         methods: {
             updateSelected(theme) {
                 this.selected = theme
             }
         },
-        created: function() {
+        created() {
             /* To change default theme, change this value and
              * change `.detect` class variables in `styles.css` */
             this.selected = this.themes[1]
