@@ -13,19 +13,20 @@
 
 <script>
     import Eventbus from '@/modules/eventbus'
-    import NavLogo from '@/svgs/logo_left.svg'
-    import NavLogo2 from '@/svgs/logo_center.svg'
 
     export default {
         name: 'Nav',
-        components: { NavLogo, NavLogo2 },
-        data: function() {
+        data() {
             return {
                 isDesktop: true
             }
         },
+        components: {
+            NavLogo: () => import('@/svgs/logo_left.svg'),
+            NavLogo2: () => import('@/svgs/logo_center.svg')
+        },
         methods: {
-            checkWindowWidth: function() {
+            checkWindowWidth() {
                 if (window.innerWidth <= 690) {
                     this.isDesktop = false
                 } else {
@@ -33,7 +34,7 @@
                 }
             }
         },
-        mounted: function() {
+        mounted() {
             Eventbus.$on('showNav', () => {
                 let nav = document.querySelector('.nav')
                 let projectsLink = nav.querySelector('a:nth-child(2)')

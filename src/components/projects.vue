@@ -1,14 +1,14 @@
 <template>
-    <div id="my-projects" class="page projects-page">
+    <section id="my-projects" class="page projects">
         <h2>Projects</h2>
-        <div v-if="data.length > 0" class="projects-list">
+        <div class="projects-list" v-if="data.length > 0">
             <ProjectItem
                 v-for="n in data.length"
-                v-bind:key="n"
-                v-bind:project="data[n - 1]"></ProjectItem>
+                :key="n"
+                :project="data[n - 1]"></ProjectItem>
         </div>
         <div class="no-projects" v-else>Loading...</div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -18,29 +18,30 @@
     export default {
         name: 'Projects',
         components: {
-            ProjectItem: require('./projectItem').default
+            ProjectItem: () => import('./projectItem')
         },
-        data: function() {
+        data() {
             return {
                 data: []
             }
         },
         methods: {
-            refresh: function() {
+            refresh() {
                 location.reload()
             }
         },
-        created: function() {
+        created() {
             axios.get(`${process.env.VUE_APP_FUNCTIONS_URL}/github`)
                 .then(response => (this.data = response.data))
         },
-        mounted: function() {
-            let page = document.querySelector('.projects-page')
-            let currentScroll = window.pageYOffset
+        mounted() {
+            let page = document.querySelector('.projects'),
+                currentScroll = window.pageYOffset
+
             window.addEventListener('scroll', () => {
-                let pageTop = page.offsetTop
-                let pageBottom = pageTop + page.clientHeight
-                let windowOffset = window.pageYOffset
+                let pageTop = page.offsetTop,
+                    pageBottom = pageTop + page.clientHeight,
+                    windowOffset = window.pageYOffset
 
                 if (windowOffset >= pageTop
                     && windowOffset <= pageBottom
@@ -57,7 +58,7 @@
 </script>
 
 <style scoped>
-    .projects-page {
+    .projects {
         padding: 85px 40px 0;
     }
 
@@ -80,13 +81,13 @@
 
 
     @media all and (max-width: 690px) {
-        .projects-page {
+        .projects {
             padding-top: 55px;
         }
     }
 
     @media all and (max-width: 480px) {
-        .projects-page {
+        .projects {
             padding-left: 15px;
             padding-right: 15px;
         }
