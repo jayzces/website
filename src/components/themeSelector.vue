@@ -31,7 +31,7 @@
                 required: true
             }
         },
-        data: function() {
+        data() {
             return {
                 selected: {
                     name: '',
@@ -59,12 +59,9 @@
 
                     clearTimeout(scaleTimeout)
                 }, 400)
-            },
-            toHSL(colorObj) {
-                return `hsl(${colorObj.h}, ${colorObj.s}%, ${colorObj.l}%)`
             }
         },
-        mounted: function() {
+        mounted() {
             this.selected = this.currentSelected
         }
     }
@@ -76,6 +73,8 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        top: 0;
+        right: 0;
         left: 0;
         bottom: 0;
         padding: 30px;

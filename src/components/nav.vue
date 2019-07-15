@@ -16,7 +16,7 @@
 
     export default {
         name: 'Nav',
-        data: function() {
+        data() {
             return {
                 isDesktop: true
             }
@@ -26,7 +26,7 @@
             NavLogo2: () => import('@/svgs/logo_center.svg')
         },
         methods: {
-            checkWindowWidth: function() {
+            checkWindowWidth() {
                 if (window.innerWidth <= 690) {
                     this.isDesktop = false
                 } else {
@@ -34,7 +34,7 @@
                 }
             }
         },
-        mounted: function() {
+        mounted() {
             Eventbus.$on('showNav', () => {
                 let nav = document.querySelector('.nav')
                 let projectsLink = nav.querySelector('a:nth-child(2)')
