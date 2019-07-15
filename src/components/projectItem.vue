@@ -1,16 +1,16 @@
 <template>
     <div class="project-item">
         <a class="preview"
-            v-bind:href="demo_url"
+            :href="demo_url"
             v-if="demo_url">
-            <img v-bind:src="preview_url"
-                v-bind:alt="title + `'s preview`"
+            <img :src="preview_url"
+                :alt="title + `'s preview`"
                 v-if="preview_url" />
             <div class="demo-indicator">Live Demo</div>
         </a>
         <div class="preview" v-else></div>
         <p>{{ desc }}</p>
-        <a v-bind:href="url" class="project-link">{{ url }}</a>
+        <a class="project-link" :href="url" >{{ url }}</a>
     </div>
 </template>
 
@@ -25,7 +25,7 @@
                 required: true
             }
         },
-        data: function() {
+        data() {
             return {
                 demo_url: this.project.homepage,
                 title: this.project.name,

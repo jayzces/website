@@ -1,18 +1,18 @@
 <template>
     <div class="theme-selector"
-        v-bind:class="{opened: openList}"
-        v-on:click.self="openList = !openList">
+        :class="{opened: openList}"
+        @click.self="openList = !openList">
         <div class="list">
             <ThemeItem
                 v-for="color in themes"
-                v-bind:key="color.name"
-                v-bind:theme="color"
-                v-on:clickItem="select(color)"></ThemeItem>
+                :key="color.name"
+                :theme="color"
+                @clickItem="select(color)"></ThemeItem>
         </div>
         <ThemeItem class="selected"
-            v-bind:class="{'scale-down': scaleDown}"
-            v-bind:theme="selected"
-            v-on:clickItem="openList = !openList"></ThemeItem>
+            :class="{'scale-down': scaleDown}"
+            :theme="selected"
+            @clickItem="openList = !openList"></ThemeItem>
     </div>
 </template>
 

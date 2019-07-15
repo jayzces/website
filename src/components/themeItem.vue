@@ -1,7 +1,7 @@
 <template>
     <div class="theme-item"
-        v-bind:style="`--main: ${main}; --sub: ${sub};`"
-        v-on:click="$emit('clickItem', true)"></div>
+        :style="`--main: ${main}; --sub: ${sub};`"
+        @click="$emit('clickItem', true)"></div>
 </template>
 
 <script>

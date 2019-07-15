@@ -1,11 +1,11 @@
 <template>
     <section id="my-projects" class="page projects">
         <h2>Projects</h2>
-        <div v-if="data.length > 0" class="projects-list">
+        <div class="projects-list" v-if="data.length > 0">
             <ProjectItem
                 v-for="n in data.length"
-                v-bind:key="n"
-                v-bind:project="data[n - 1]"></ProjectItem>
+                :key="n"
+                :project="data[n - 1]"></ProjectItem>
         </div>
         <div class="no-projects" v-else>Loading...</div>
     </section>
@@ -37,6 +37,7 @@
         mounted() {
             let page = document.querySelector('.projects'),
                 currentScroll = window.pageYOffset
+
             window.addEventListener('scroll', () => {
                 let pageTop = page.offsetTop,
                     pageBottom = pageTop + page.clientHeight,
