@@ -100,9 +100,18 @@
             }
         },
         created() {
-            /* To change default theme, change this value and
-             * change `.detect` class variables in `styles.css` */
-            this.selected = this.themes[1]
+            /**
+             * Detect initial color scheme preference to set the right value.
+             * To change default theme, change this value and change
+             * `.detect` class variables in `styles.css`
+             */
+            let prefersDark =
+                    window.matchMedia('(prefers-color-scheme: dark)').matches,
+                prefersLight =
+                    window.matchMedia('(prefers-color-scheme: light)').matches
+
+            if (prefersLight && !prefersDark) this.selected = this.themes[0]
+            else this.selected = this.themes[1]
         }
     }
 </script>

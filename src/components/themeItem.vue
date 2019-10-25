@@ -1,7 +1,8 @@
 <template>
     <div class="theme-item"
         :style="`--main: ${main}; --sub: ${sub};`"
-        @click="$emit('clickItem', true)"></div>
+        @click="$emit('clickItem', true)"
+        :title="theme.name | capitalize"></div>
 </template>
 
 <script>
@@ -11,6 +12,11 @@
             theme: {
                 type: Object,
                 required: true
+            }
+        },
+        filters: {
+            capitalize(word) {
+                return word.charAt(0).toUpperCase() + word.substring(1)
             }
         },
         computed: {
