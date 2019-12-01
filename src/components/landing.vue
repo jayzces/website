@@ -13,7 +13,7 @@
                 <a href="#my-projects">My Projects</a>
                 <a href="https://resume.louisehermosa.com/" target="_blank" rel="noreferrer">My Resume</a>
                 <a href="https://github.com/jayzces" target="_blank" rel="noreferrer"> @jayzces on Github</a>
-                <a href="mailto:louise@channelfix.com">louise@channelfix.com</a>
+                <a href="mailto:hi@louisehermosa.com">hi@louisehermosa.com</a>
             </footer>
         </div>
     </section>
