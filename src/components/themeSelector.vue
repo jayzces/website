@@ -7,7 +7,7 @@
                 v-for="color in themes"
                 :key="color.name"
                 :theme="color"
-                @clickItem="select(color)"></ThemeItem>
+                @clickItem="selectAndAnimate(color)"></ThemeItem>
         </div>
         <ThemeItem class="selected"
             :class="{'scale-down': scaleDown}"
@@ -46,23 +46,24 @@
             ThemeItem: require('./themeItem').default
         },
         methods: {
-            select(color) {
+            selectAndAnimate(color) {
                 if (this.selected == color) return
                 this.scaleDown = true
                 let scaleTimeout = setTimeout(() => {
                     this.selected = color
                     this.scaleDown = false
-
-                    let body = document.querySelector('body')
-                    body.dataset.theme = color.name
                     this.$emit('themeChange', this.selected)
-
                     clearTimeout(scaleTimeout)
                 }, 400)
             }
         },
         mounted() {
             this.selected = this.currentSelected
+        },
+        watch: {
+            currentSelected(theme) {
+                this.selected = theme
+            }
         }
     }
 </script>

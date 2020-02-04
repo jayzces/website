@@ -97,6 +97,12 @@
         methods: {
             updateSelected(theme) {
                 this.selected = theme
+                let body = document.querySelector('body')
+                body.dataset.theme = theme.name
+            },
+            randomizeTheme() {
+                let randomTheme = Math.floor(Math.random() * Math.floor(this.themes.length))
+                this.updateSelected(this.themes[randomTheme])
             }
         },
         created() {
@@ -105,13 +111,34 @@
              * To change default theme, change this value and change
              * `.detect` class variables in `styles.css`
              */
-            let prefersDark =
-                    window.matchMedia('(prefers-color-scheme: dark)').matches,
-                prefersLight =
-                    window.matchMedia('(prefers-color-scheme: light)').matches
+            // let prefersDark =
+            //         window.matchMedia('(prefers-color-scheme: dark)').matches,
+            //     prefersLight =
+            //         window.matchMedia('(prefers-color-scheme: light)').matches
 
-            if (prefersLight && !prefersDark) this.selected = this.themes[0]
-            else this.selected = this.themes[1]
+            // if (prefersLight && !prefersDark) this.selected = this.themes[0]
+            // else this.selected = this.themes[1]
+
+
+            // Randomize initial color scheme
+            this.randomizeTheme()
+        },
+        mounted() {
+            window.addEventListener('keyup', e => {
+                if (e.code == 'Enter') {
+                    this.randomizeTheme()
+                } else if (e.code == 'ArrowRight') {
+                    let currentIndex = this.themes.indexOf(this.selected),
+                        nextIndex = currentIndex < this.themes.length - 1 ?
+                            currentIndex + 1 : 0
+                    this.updateSelected(this.themes[nextIndex])
+                } else if (e.code == 'ArrowLeft') {
+                    let currentIndex = this.themes.indexOf(this.selected),
+                        nextIndex = currentIndex > 0 ?
+                            currentIndex - 1 : this.themes.length - 1
+                    this.updateSelected(this.themes[nextIndex])
+                }
+            })
         }
     }
 </script>
