@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const API_ENDPOINT = `https://api.github.com/users/jayzces/repos?sort=pushed&client_id=${process.env.VUE_APP_CLIENT_ID}&client_secret=${process.env.VUE_APP_CLIENT_SECRET}`
+const API_ENDPOINT = `https://api.github.com/users/jayzces/repos?sort=pushed&access_token=${process.env.VUE_APP_ACCESS_TOKEN}`
 
 exports.handler = async (event, context) => {
     return fetch(API_ENDPOINT)

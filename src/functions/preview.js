@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 exports.handler = async (event, context) => {
-    let APIEndpoint = `https://api.github.com/repos/jayzces/${event.queryStringParameters.repo}/contents?client_id=${process.env.VUE_APP_CLIENT_ID}&client_secret=${process.env.VUE_APP_CLIENT_SECRET}`
+    let APIEndpoint = `https://api.github.com/repos/jayzces/${event.queryStringParameters.repo}/contents?access_token=${process.env.VUE_APP_ACCESS_TOKEN}`
     return fetch(APIEndpoint)
         .then(response => response.json())
         .then(data => ({
