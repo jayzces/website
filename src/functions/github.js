@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const API_ENDPOINT = `https://api.github.com/users/jayzces/repos?sort=pushed&access_token=${process.env.VUE_APP_ACCESS_TOKEN}`
+const API_ENDPOINT = `https://api.github.com/users/jayzces/repos?sort=pushed`
 
 exports.handler = async (event, context) => {
     return fetch(API_ENDPOINT)
@@ -12,7 +12,8 @@ exports.handler = async (event, context) => {
             statusCode: 200,
             body: JSON.stringify(data),
             headers: {
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
+                'Authorization': `${process.env.VUE_APP_ACCESS_TOKEN}`
             }
         }))
         .catch(error => ({ statusCode: 422, body: String(error) }))

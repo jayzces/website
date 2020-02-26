@@ -4,14 +4,15 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 exports.handler = async (event, context) => {
-    let APIEndpoint = `https://api.github.com/repos/jayzces/${event.queryStringParameters.repo}/contents?access_token=${process.env.VUE_APP_ACCESS_TOKEN}`
+    let APIEndpoint = `https://api.github.com/repos/jayzces/${event.queryStringParameters.repo}/contents`
     return fetch(APIEndpoint)
         .then(response => response.json())
         .then(data => ({
             statusCode: 200,
             body: getURL(data),
             headers: {
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
+                'Authorization': `${process.env.VUE_APP_ACCESS_TOKEN}`
             }
         }))
         .catch(error => ({ statusCode: 422, body: String(error) }))
