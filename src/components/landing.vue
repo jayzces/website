@@ -7,7 +7,9 @@
                 </div>
             </header>
 
-            <p>I’m a front end web developer and web designer at <a href="https://channelfix.com" target="_blank" rel="noreferrer" class="main-link">ChannelFix.com</a> and <a href="https://bposeats.com" target="_blank" rel="noreferrer" class="main-link">BPOSeats.com</a>.  I specialize in UI design, and templating. Currently exploring new front end technologies.</p>
+            <p>
+                I'm a Web Developer at <a href="https://arcanys.com" rel="noreferrer" class="main-link">Arcanys</a>. Previously a Front End Web Developer and Web Designer at <strong>ChannelFix.com</strong> and <strong>BPOSeats.com</strong>. I specialize in UI design, and templating. Currently exploring new front end technologies.
+            </p>
 
             <footer class="links">
                 <a href="#my-projects">My Projects</a>
