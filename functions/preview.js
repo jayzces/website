@@ -1,10 +1,12 @@
 import fetch from 'node-fetch'
+import dotenv from 'dotenv'
+dotenv.config()
 
 exports.handler = async (event, context) => {
   let APIEndpoint = `https://api.github.com/repos/jayzces/${event.queryStringParameters.repo}/contents`
   return fetch(APIEndpoint, {
     headers: {
-      'Authorization': `${process.env.GITHUB_ACCESS_TOKEN}`
+      'Authorization': `token ${process.env.GITHUB_ACCESS_TOKEN}`
     }
   })
     .then(response => response.json())

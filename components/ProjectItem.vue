@@ -135,8 +135,6 @@
 </style>
 
 <script>
-  import axios from 'axios'
-
   export default {
     props: {
       project: {
@@ -153,11 +151,17 @@
         preview_url: ''
       }
     },
+    methods: {
+      async fetchPreview() {
+        await this.$axios
+          .$get(`${this.$config.functionsURL}/preview?repo=${this.title}`)
+          .then(response => {
+            if (response != 'none') this.preview_url = response
+          })
+      }
+    },
     created() {
-      axios.get(`${this.$config.functionsURL}/preview?repo=${this.title}`)
-        .then(response => {
-          if (response.data != 'none') this.preview_url = response.data
-        })
+      this.fetchPreview()
     }
   }
 </script>

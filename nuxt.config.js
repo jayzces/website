@@ -82,10 +82,10 @@ export default {
     ]
   },
   modules: [
-    '@nuxtjs/gtm'
+    '@nuxtjs/gtm',
+    '@nuxtjs/axios'
   ],
   publicRuntimeConfig: {
-    accessToken: process.env.GITHUB_ACCESS_TOKEN || '',
     functionsURL: process.env.NETLIFY_FUNCTIONS_URL || ''
   },
   static: {

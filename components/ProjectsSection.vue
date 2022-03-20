@@ -48,8 +48,6 @@
 </style>
 
 <script>
-  import axios from 'axios'
-
   export default {
     data() {
       return {
@@ -57,13 +55,14 @@
       }
     },
     methods: {
-      refresh() {
-        location.reload()
+      async fetchProjects() {
+        await this.$axios
+          .$get(`${this.$config.functionsURL}/github`)
+          .then(response => this.data = response)
       }
     },
     created() {
-      axios.get(`${this.$config.functionsURL}/github`)
-        .then(response => this.data = response.data)
+      this.fetchProjects()
     },
     mounted() {
       const page = this.$refs.projects

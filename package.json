@@ -14,8 +14,9 @@
     "functions": "netlify-lambda serve ./functions"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/gtm": "^2.4.0",
-    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
