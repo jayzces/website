@@ -133,7 +133,7 @@
       // this.detectColorScheme()
 
       // Randomize initial color scheme
-      // this.randomizeTheme()
+      this.randomizeTheme()
 
       window.addEventListener('keyup', e => {
         if (e.code == 'Enter') {
