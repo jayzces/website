@@ -1,37 +1,25 @@
 {
-    "name": "website",
-    "version": "1.0.0",
-    "description": "Source code for LouiseHermosa.com",
-    "main": "index.js",
-    "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build && netlify-lambda build src/functions",
-        "functions": "netlify-lambda serve src/functions"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jayzces/website.git"
-    },
-    "keywords": [
-        "website"
-    ],
-    "author": "Mary Louise Hermosa",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/jayzces/website/issues"
-    },
-    "homepage": "https://github.com/jayzces/website#readme",
-    "dependencies": {
-        "axios": "^0.26.1",
-        "dotenv": "^7.0.0",
-        "encoding": "^0.1.12",
-        "node-fetch": "^2.3.0",
-        "vue": "^2.6.8",
-        "vue-svg-loader": "^0.12.0"
-    },
-    "devDependencies": {
-        "@vue/cli-service": "^3.7.0",
-        "netlify-lambda": "^1.4.2",
-        "vue-template-compiler": "^2.6.8"
-    }
+  "name": "website",
+  "version": "2.1.0",
+  "description": "Source code for LouiseHermosa.com",
+  "main": "index.js",
+  "repository": "git@github.com:jayzces/website.git",
+  "author": "Mary Louise Hermosa <jayzces@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt --dotenv .env.dev",
+    "generate": "nuxt generate --dotenv .env.prod",
+    "start": "nuxt start --dotenv .env.prod",
+    "prod": "nuxt generate --dotenv .env.prod && nuxt start --dotenv .env.prod",
+    "functions": "netlify-lambda serve ./functions"
+  },
+  "dependencies": {
+    "@nuxtjs/gtm": "^2.4.0",
+    "axios": "^0.26.1",
+    "nuxt": "^2.15.8"
+  },
+  "devDependencies": {
+    "@nuxtjs/svg": "^0.4.0",
+    "netlify-lambda": "^2.0.15"
+  }
 }

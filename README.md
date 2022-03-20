@@ -6,26 +6,35 @@ Source code for LouiseHermosa.com
 
 ![preview](preview.png)
 
-# Run
-### Local Server
+# Dependencies
+- [Yarn](https://yarnpkg.com/)
+
+# Scripts
 ```
-npm run serve
+# install project dependencies
+yarn install
+
+# Local Server
+yarn dev
+
+# Production Build for static hosting
+yarn generate
+
+# Serve Production Build
+yarn start
+
+# Build Files and Serve Production Build
+yarn prod
+
+# Netlify Functions API
+yarn functions
 ```
-### Production Build
+
+# Environment Variables
 ```
-npm run build
+GITHUB_ACCESS_TOKEN=0
+NETLIFY_FUNCTIONS_URL=http://localhost:9000
 ```
-### API Access Server
-```
-npm run functions
-```
-### Environment Variables
-Prefixed with `VUE_APP_` for access in Vue Project
-```
-VUE_APP_ACCESS_TOKEN=0
-VUE_APP_FUNCTIONS_URL=http://localhost:9000
-```
-Replace `VUE_APP_FUNCTIONS_URL` in production with the base URL.
 
 # Sources
 - [Assistant Fonts](https://fonts.google.com/specimen/Assistant)
