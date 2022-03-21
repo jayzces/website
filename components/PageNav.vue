@@ -6,7 +6,7 @@
       <div v-html="logoCenter" v-else></div>
     </a>
     <a href="#my-projects"
-      :class="{ 'active': !showNav }">My Projects</a>
+      :class="{ 'active': showNav }">My Projects</a>
     <a href="https://resume.louisehermosa.com/" target="_blank" rel="noreferrer">My Resume</a>
     <a href="https://github.com/jayzces" target="_blank" rel="noreferrer"> @jayzces on Github</a>
     <a href="mailto:hi@louisehermosa.com">hi@louisehermosa.com</a>
