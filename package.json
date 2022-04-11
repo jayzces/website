@@ -10,7 +10,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "prod": "nuxt build && nuxt start",
+    "prod": "nuxt build && nuxt start"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
