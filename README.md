@@ -31,16 +31,12 @@ yarn functions
 ```
 
 # Environment Variables
-`.env` file used for Netlify functions. File has to be created on new cloned project.
-
-`.env.dev` and `.env.prod` used for Nuxt builds.
+Create new `.env` file with the following variables
 
 ```
-# .env
 GITHUB_ACCESS_TOKEN=0
-
-# .env.dev, .env.prod
-NETLIFY_FUNCTIONS_URL=http://localhost:9000
+GITHUB_API=https://api.github.com
+GITHUB_USERNAME=jayzces
 ```
 
 # Sources

@@ -83,10 +83,20 @@ export default {
   },
   modules: [
     '@nuxtjs/gtm',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '~/modules/github'
   ],
   publicRuntimeConfig: {
-    functionsURL: process.env.NETLIFY_FUNCTIONS_URL || ''
+    functionsURL: process.env.NETLIFY_FUNCTIONS_URL || '',
+    rootUrl: process.env.NODE_ENV === 'production'
+      ? '' : 'http://localhost:3000',
+  },
+  privateRuntimeConfig: {
+    github: {
+      api: process.env.GITHUB_API,
+      token: process.env.GITHUB_ACCESS_TOKEN,
+      username: process.env.GITHUB_USERNAME
+    }
   },
   static: {
     prefix: false

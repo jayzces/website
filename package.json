@@ -7,7 +7,7 @@
   "author": "Mary Louise Hermosa <jayzces@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt --dotenv .env.dev",
+    "dev": "nuxt",
     "generate": "nuxt generate --dotenv .env.prod",
     "start": "nuxt start --dotenv .env.prod",
     "prod": "nuxt generate --dotenv .env.prod && nuxt start --dotenv .env.prod",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/gtm": "^2.4.0",
+    "body-parser": "^1.20.0",
     "dotenv": "^16.0.0",
     "nuxt": "^2.15.8"
   },

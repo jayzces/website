@@ -153,10 +153,16 @@
     },
     methods: {
       async fetchPreview() {
-        await this.$axios
-          .$get(`${this.$config.functionsURL}/preview?repo=${this.title}`)
-          .then(response => {
-            if (response != 'none') this.preview_url = response
+        // await this.$axios
+        //   .$get(`${this.$config.functionsURL}/preview?repo=${this.title}`)
+        //   .then(response => {
+        //     if (response != 'none') this.preview_url = response
+        //   })
+        await fetch(`${this.$config.rootUrl}/api/previews?repo=${this.title}`)
+          .then(response => response.json())
+          .then(parsedData => {
+            const body = parsedData.body
+            this.preview_url = body ?? ''
           })
       }
     },

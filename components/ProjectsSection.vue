@@ -55,10 +55,14 @@
       }
     },
     methods: {
-      async fetchProjects() {
-        await this.$axios
-          .$get(`${this.$config.functionsURL}/github`)
-          .then(response => this.data = response)
+      async fetchProjects(page = 1) {
+        await fetch(`${this.$config.rootUrl}/api/projects`, {
+          headers: { 'Content-Type': 'application/json' },
+          method: 'POST',
+          body: JSON.stringify({ page })
+        })
+          .then(response => response.json())
+          .then(parsedData => this.data = parsedData.body)
       }
     },
     created() {
@@ -82,6 +86,8 @@
 
         currentScroll = windowOffset
       })
+
+      // this.fetchProjects()
     }
   }
 </script>
