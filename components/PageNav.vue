@@ -13,6 +13,35 @@
   </nav>
 </template>
 
+<script>
+  import logoCenter from '~/assets/svg/logo_center.svg?raw'
+  import logoLeft from '~/assets/svg/logo_left.svg?raw'
+
+  export default {
+    data() {
+      return {
+        isDesktop: true,
+        logoCenter,
+        logoLeft,
+        showNav: false
+      }
+    },
+    methods: {
+      checkWindowWidth() {
+        if (window.innerWidth <= 690) this.isDesktop = false
+        else this.isDesktop = true
+      }
+    },
+    mounted() {
+      this.$nuxt.$on('showNav', () => this.showNav = true)
+      this.$nuxt.$on('hideNav', () => this.showNav = false)
+
+      this.checkWindowWidth()
+      window.addEventListener('resize', this.checkWindowWidth)
+    }
+  }
+</script>
+
 <style scoped>
   .nav {
     background-color: var(--bg-color);
@@ -114,32 +143,3 @@
     }
   }
 </style>
-
-<script>
-  import logoCenter from '~/assets/svg/logo_center.svg?raw'
-  import logoLeft from '~/assets/svg/logo_left.svg?raw'
-
-  export default {
-    data() {
-      return {
-        isDesktop: true,
-        logoCenter,
-        logoLeft,
-        showNav: false
-      }
-    },
-    methods: {
-      checkWindowWidth() {
-        if (window.innerWidth <= 690) this.isDesktop = false
-        else this.isDesktop = true
-      }
-    },
-    mounted() {
-      this.$nuxt.$on('showNav', () => this.showNav = true)
-      this.$nuxt.$on('hideNav', () => this.showNav = false)
-
-      this.checkWindowWidth()
-      window.addEventListener('resize', this.checkWindowWidth)
-    }
-  }
-</script>

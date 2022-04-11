@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Source code for LouiseHermosa.com",
   "main": "index.js",
   "repository": "git@github.com:jayzces/website.git",
@@ -8,10 +8,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "nuxt",
-    "generate": "nuxt generate --dotenv .env.prod",
-    "start": "nuxt start --dotenv .env.prod",
-    "prod": "nuxt generate --dotenv .env.prod && nuxt start --dotenv .env.prod",
-    "functions": "netlify-lambda serve ./functions"
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "prod": "nuxt build && nuxt start",
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",

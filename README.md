@@ -18,16 +18,13 @@ yarn install
 yarn dev
 
 # Production Build for static hosting
-yarn generate
+yarn build
 
 # Serve Production Build
 yarn start
 
 # Build Files and Serve Production Build
 yarn prod
-
-# Netlify Functions API
-yarn functions
 ```
 
 # Environment Variables

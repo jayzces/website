@@ -14,6 +14,39 @@
   </div>
 </template>
 
+<script>
+  export default {
+    props: {
+      project: {
+        type: Object,
+        required: true
+      }
+    },
+    data() {
+      return {
+        demo_url: this.project.homepage,
+        title: this.project.name,
+        desc: this.project.description,
+        url: this.project.html_url,
+        preview_url: ''
+      }
+    },
+    methods: {
+      async fetchPreview() {
+        await fetch(`${this.$config.rootUrl}/api/previews?repo=${this.title}`)
+          .then(response => response.json())
+          .then(parsedData => {
+            const body = parsedData.body
+            this.preview_url = body ?? ''
+          })
+      }
+    },
+    created() {
+      this.fetchPreview()
+    }
+  }
+</script>
+
 <style scoped>
   .project-item {
     margin: 20px 0;
@@ -133,41 +166,3 @@
     }
   }
 </style>
-
-<script>
-  export default {
-    props: {
-      project: {
-        type: Object,
-        required: true
-      }
-    },
-    data() {
-      return {
-        demo_url: this.project.homepage,
-        title: this.project.name,
-        desc: this.project.description,
-        url: this.project.html_url,
-        preview_url: ''
-      }
-    },
-    methods: {
-      async fetchPreview() {
-        // await this.$axios
-        //   .$get(`${this.$config.functionsURL}/preview?repo=${this.title}`)
-        //   .then(response => {
-        //     if (response != 'none') this.preview_url = response
-        //   })
-        await fetch(`${this.$config.rootUrl}/api/previews?repo=${this.title}`)
-          .then(response => response.json())
-          .then(parsedData => {
-            const body = parsedData.body
-            this.preview_url = body ?? ''
-          })
-      }
-    },
-    created() {
-      this.fetchPreview()
-    }
-  }
-</script>

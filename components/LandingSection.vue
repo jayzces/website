@@ -21,6 +21,18 @@
   </section>
 </template>
 
+<script>
+  import logoCenter from '~/assets/svg/logo_center.svg?raw'
+
+  export default {
+    data() {
+      return {
+        logoCenter
+      }
+    }
+  }
+</script>
+
 <style scoped>
   .landing {
     display: grid;
@@ -144,15 +156,3 @@
     }
   }
 </style>
-
-<script>
-  import logoCenter from '~/assets/svg/logo_center.svg?raw'
-
-  export default {
-    data() {
-      return {
-        logoCenter
-      }
-    }
-  }
-</script>

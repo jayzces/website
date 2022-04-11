@@ -89,7 +89,7 @@ export default {
   publicRuntimeConfig: {
     functionsURL: process.env.NETLIFY_FUNCTIONS_URL || '',
     rootUrl: process.env.NODE_ENV === 'production'
-      ? '' : 'http://localhost:3000',
+      ? 'https://louisehermosa.com' : 'http://localhost:3000'
   },
   privateRuntimeConfig: {
     github: {

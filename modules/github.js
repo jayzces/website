@@ -29,7 +29,8 @@ export default function() {
   }
 
   async function getProjects(req, res) {
-    const url = `${api}/users/${username}/repos?sort=pushed&per_page=9&page=${req.body.page}`
+    const { hits, page } = req.body
+    const url = `${api}/users/${username}/repos?sort=pushed&per_page=${hits}&page=${page}`
 
     try {
       const response = await unWrap(await fetch(url, { headers }))
