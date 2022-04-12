@@ -9,11 +9,11 @@
       </div>
 
       <div class="buttons">
-        <button class="bg-sub clickable"
+        <button class="outlined clickable"
           v-if="showPrev"
           @click="navigatePage(page - 1)"
           :disabled="loading">Prev</button>
-        <button class="bg-main clickable"
+        <button class="filled clickable"
           v-if="showNext"
           @click="navigatePage(page + 1)"
           :disabled="loading">Next</button>
@@ -134,21 +134,61 @@
     font-family: inherit;
     font-size: 1rem;
     color: inherit;
-    border: 0;
-    border-radius: 0.25rem;
     cursor: pointer;
+    border: 0;
   }
 
   button:disabled {
     opacity: 0.7;
   }
 
-  .bg-main {
-    background-color: var(--main-accent);
+  .filled,
+  .outlined::before {
+    background-image: linear-gradient(to right, var(--main-accent), var(--sub-accent));
+    transform: scale(1.05, 1.1);
   }
 
-  .bg-sub {
-    background-color: var(--sub-accent);
+  .filled:hover,
+  .outlined:hover::before {
+    background-size: 300% 300%;
+    animation: wave 3s ease infinite;
+  }
+
+  .outlined {
+    position: relative;
+  }
+
+  .outlined::before,
+  .outlined::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .outlined::before {
+    background-color: pink;
+    padding: 2px;
+    z-index: -2;
+  }
+
+  .outlined::after {
+    background-color: var(--bg-color);
+    z-index: -1;
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 75% 100%;
+    }
   }
 
 
