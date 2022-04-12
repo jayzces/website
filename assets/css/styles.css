@@ -201,9 +201,61 @@ svg * {
 }
 
 
+.clickable {
+    position: relative;
+    z-index: 0;
+}
+
+
+.fancy-link {
+    position: relative;
+    display: inline-block;
+    transition: all 200ms ease-in-out;
+    color: inherit;
+    z-index: 0;
+}
+
+.fancy-link.active {
+    color: inherit;
+}
+
+.fancy-link::before {
+    content: "";
+    background-image: linear-gradient(to right,
+      var(--main-accent),
+      var(--sub-accent));
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 8px;
+    max-height: 0%;
+    transition: all 200ms ease-in-out;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.fancy-link.active,
+.fancy-link:hover {
+    color: var(--text-color);
+}
+
+.fancy-link.active::before,
+.fancy-link:hover::before {
+    max-height: 100%;
+}
+
+
 @media all and (max-width: 480px) {
 
     body {
         font-size: 14px;
+    }
+
+    .fancy-link.active::before {
+        bottom: 2px;
+        height: 6px;
     }
 }
