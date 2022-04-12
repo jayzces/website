@@ -4,6 +4,7 @@ import fetch from 'node-fetch'
 export default function() {
   const { api, token, username } = this.options.privateRuntimeConfig.github
   const headers = { 'Authorization': `token ${token}` }
+  const rootUrl = this.options.publicRuntimeConfig.rootUrl
 
   this.nuxt.hook('render:setupMiddleware', app => {
     app.use(bodyParser.json())
@@ -17,6 +18,7 @@ export default function() {
       .then(response => unWrap(response))
       .then(parsedResponse => {
         res.setHeader('Content-Type', 'application/json')
+        res.setHeader('Access-Control-Allow-Origin', rootUrl)
         res.end(JSON.stringify({
           ...parsedResponse,
           body: getUrl(parsedResponse.body)
@@ -36,6 +38,7 @@ export default function() {
       .then(response => unWrap(response))
       .then(parsedResponse => {
         res.setHeader('Content-Type', 'application/json')
+        res.setHeader('Access-Control-Allow-Origin', rootUrl)
         res.end(JSON.stringify(parsedResponse))
       })
       .catch(err => {
