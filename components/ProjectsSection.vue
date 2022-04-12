@@ -36,10 +36,8 @@
       }
     },
     methods: {
-      async fetchProjects(page = 1) {
-        const hits = 9
-
-        await fetch(`${this.$config.rootUrl}/api/projects`, {
+      fetchProjects(page = 1, hits = 9) {
+        fetch(`${this.$config.rootUrl}/api/projects`, {
           headers: { 'Content-Type': 'application/json' },
           method: 'POST',
           body: JSON.stringify({ page, hits })
@@ -59,9 +57,7 @@
               this.showPrev = true
             }
 
-            if (this.scrollToTop) {
-              this.scrollToTopSection()
-            }
+            if (this.scrollToTop) this.scrollToTopSection()
           })
       },
       navigatePage(newPage) {

@@ -15,53 +15,6 @@
   </div>
 </template>
 
-<style scoped>
-  .theme-selector {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    padding: 30px;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .opened {
-    width: 100vw;
-    height: 100vh;
-    pointer-events: auto;
-  }
-
-  .list {
-    display: flex;
-    align-items: center;
-    flex-direction: column-reverse;
-    padding: 5px 0;
-    width: max-content;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .opened .list {
-    pointer-events: auto;
-  }
-
-  .scale-down {
-    transform: scale(0);
-  }
-
-  .selected {
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 5px 10px var(--box-shadow);
-    pointer-events: auto;
-  }
-</style>
-
 <script>
   export default {
     props: {
@@ -109,3 +62,50 @@
     }
   }
 </script>
+
+<style scoped>
+  .theme-selector {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 30px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .opened {
+    width: 100vw;
+    height: 100vh;
+    pointer-events: auto;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 5px 0;
+    width: max-content;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .opened .list {
+    pointer-events: auto;
+  }
+
+  .scale-down {
+    transform: scale(0);
+  }
+
+  .selected {
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 5px 10px var(--box-shadow);
+    pointer-events: auto;
+  }
+</style>

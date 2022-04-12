@@ -32,13 +32,10 @@
       }
     },
     methods: {
-      async fetchPreview() {
-        await fetch(`${this.$config.rootUrl}/api/previews?repo=${this.title}`)
+      fetchPreview() {
+        fetch(`${this.$config.rootUrl}/api/previews?repo=${this.title}`)
           .then(response => response.json())
-          .then(parsedData => {
-            const body = parsedData.body
-            this.preview_url = body ?? ''
-          })
+          .then(parsedData => this.preview_url = parsedData.body ?? '')
       }
     },
     created() {
