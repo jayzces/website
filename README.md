@@ -18,7 +18,7 @@ yarn install
 yarn dev
 
 # Production Build for static hosting
-yarn build
+yarn generate
 
 # Serve Production Build
 yarn start

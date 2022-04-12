@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "generate": "nuxt generate",
     "start": "nuxt start",
-    "prod": "nuxt build && nuxt start"
+    "prod": "nuxt generate && nuxt start"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
