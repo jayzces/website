@@ -9,11 +9,11 @@
       </div>
 
       <div class="buttons">
-        <button class="bg-sub"
+        <button class="bg-sub clickable"
           v-if="showPrev"
           @click="navigatePage(page - 1)"
           :disabled="loading">Prev</button>
-        <button class="bg-main"
+        <button class="bg-main clickable"
           v-if="showNext"
           @click="navigatePage(page + 1)"
           :disabled="loading">Next</button>
@@ -137,7 +137,6 @@
     border: 0;
     border-radius: 0.25rem;
     cursor: pointer;
-    z-index: 0;
   }
 
   button:disabled {

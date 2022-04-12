@@ -10,7 +10,7 @@
     </a>
     <div class="preview" v-else></div>
     <p>{{ desc }}</p>
-    <a class="project-link" :href="url" >{{ url }}</a>
+    <a class="project-link fancy-link" :href="url" >{{ url }}</a>
   </div>
 </template>
 
@@ -96,44 +96,12 @@
     margin: 20px 0 0;
   }
 
-  .project-link {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: max-content;
-    max-width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  .fancy-link {
     font-weight: 600;
+  }
+
+  .fancy-link:not(:hover) {
     color: var(--subtext-color);
-    z-index: 0;
-  }
-
-  .project-link::before {
-    content: "";
-    background-image: linear-gradient(to right,
-      var(--main-accent),
-      var(--sub-accent));
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 4px;
-    width: 100%;
-    height: 8px;
-    max-height: 0;
-    transform: rotate(-2deg);
-    z-index: -1;
-    transition: all 200ms ease-in-out;
-  }
-
-  .project-link:hover {
-    color: var(--text-color);
-  }
-
-  .project-link:hover::before {
-    max-height: 100%;
   }
 
 

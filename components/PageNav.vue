@@ -2,14 +2,19 @@
   <nav class="nav"
     :class="{ 'visible': showNav }">
     <a href="#home" class="logo-link">logo
-      <div v-html="logoLeft" v-if="isDesktop"></div>
-      <div v-html="logoCenter" v-else></div>
+      <div v-html="isDesktop ? logoLeft : logoCenter"></div>
     </a>
-    <a href="#my-projects"
+    <a class="fancy-link"
+      href="#my-projects"
       :class="{ 'active': showNav }">My Projects</a>
-    <a href="https://resume.louisehermosa.com/" target="_blank" rel="noreferrer">My Resume</a>
-    <a href="https://github.com/jayzces" target="_blank" rel="noreferrer"> @jayzces on Github</a>
-    <a href="mailto:hi@louisehermosa.com">hi@louisehermosa.com</a>
+    <a class="fancy-link"
+      href="https://resume.louisehermosa.com/"
+      rel="noreferrer">My Resume</a>
+    <a class="fancy-link"
+      href="https://github.com/jayzces"
+      rel="noreferrer"> @jayzces on Github</a>
+    <a class="fancy-link"
+      href="mailto:hi@louisehermosa.com">hi@louisehermosa.com</a>
   </nav>
 </template>
 
@@ -70,49 +75,20 @@
     font-size: 0;
   }
 
+  .logo-link > div {
+    width: 143px;
+  }
 
-  .nav a:not(.logo-link) {
-    position: relative;
-    z-index: 0;
+  .fancy-link {
     font-weight: 600;
+  }
+
+  .fancy-link:not(:hover):not(.active) {
     color: var(--subtext-color);
   }
 
   .nav a:not(.logo-link):not(:first-child) {
     margin-left: 30px;
-  }
-
-  .nav a:not(.logo-link)::before {
-    content: "";
-    background-image: linear-gradient(to right,
-      var(--main-accent),
-      var(--sub-accent));
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 4px;
-    width: 100%;
-    height: 8px;
-    max-height: 0;
-    transform: rotate(-2deg);
-    z-index: -1;
-    transition: all 200ms ease-in-out;
-  }
-
-  .nav a:not(.logo-link):hover,
-  .nav .active.active {
-    color: var(--text-color);
-  }
-
-  .nav a:not(.logo-link):hover::before,
-  .nav .active.active::before {
-    max-height: 100%;
-  }
-
-
-  .nav svg {
-    height: 40px;
   }
 
 
@@ -129,7 +105,6 @@
   @media all and (max-width: 690px) {
     .nav {
       justify-content: center;
-      align-items: flex-end;
       padding: 0 15px;
       height: 50px;
     }
@@ -138,8 +113,8 @@
       display: none;
     }
 
-    .nav svg {
-      height: 35px;
+    .logo-link > div {
+      width: 123px;
     }
   }
 </style>

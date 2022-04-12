@@ -2,20 +2,6 @@
   <canvas class="canvas" ref="playground"></canvas>
 </template>
 
-<style scoped>
-  .canvas {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-  }
-</style>
-
 <script>
   export default {
     props: {
@@ -153,3 +139,17 @@
     }
   }
 </script>
+
+<style scoped>
+  .canvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
+</style>
