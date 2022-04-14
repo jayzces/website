@@ -33,7 +33,9 @@
     },
     methods: {
       fetchPreview() {
-        fetch(`${this.$config.rootUrl}/api/previews?repo=${this.title}`)
+        fetch(`${this.$config.rootUrl}/api/previews?repo=${this.title}`, {
+          headers: { 'Content-Type': 'application/json' },
+        })
           .then(response => response.json())
           .then(parsedData => this.preview_url = parsedData.json ?? '')
       }
