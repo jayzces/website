@@ -20,6 +20,14 @@ export default function() {
     fetch(`${api}/repos/${username}/${repo}/contents`, { headers })
       .then(response => unWrap(response))
       .then(parsedResponse => {
+        console.log({ previews: parsedResponse })
+
+        if (!parsedResponse.ok) {
+          res.statusCode = 500
+          res.end()
+          return
+        }
+
         res.setHeader('Content-Type', 'application/json')
         res.setHeader('Access-Control-Allow-Origin', rootUrl)
         res.end(JSON.stringify({
@@ -37,9 +45,12 @@ export default function() {
     fetch(url, { headers })
       .then(response => unWrap(response))
       .then(parsedResponse => {
+        console.log({ projects: parsedResponse })
+
         if (!parsedResponse.ok) {
           res.statusCode = 500
           res.end()
+          return
         }
 
         res.setHeader('Content-Type', 'application/json')
