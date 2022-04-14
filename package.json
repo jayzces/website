@@ -10,7 +10,7 @@
     "dev": "nuxt",
     "generate": "nuxt generate",
     "start": "nuxt start",
-    "functions": "netlify-lambda serve functions"
+    "functions": "netlify-lambda serve static/functions"
   },
   "dependencies": {
     "@nuxtjs/gtm": "^2.4.0",
