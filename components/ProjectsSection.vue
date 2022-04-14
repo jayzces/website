@@ -37,7 +37,7 @@
     },
     methods: {
       fetchProjects(page = 1, hits = 9) {
-        fetch(`${this.$config.rootUrl}/api/projects`, {
+        fetch(`/api/projects`, {
           headers: { 'Content-Type': 'application/json' },
           method: 'POST',
           body: JSON.stringify({ page, hits })
