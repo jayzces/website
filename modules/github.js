@@ -24,7 +24,7 @@ export default function() {
 
         if (!parsedResponse.ok) {
           res.statusCode = 500
-          res.end()
+          res.end(JSON.stringify({}))
           return
         }
 
@@ -49,7 +49,7 @@ export default function() {
 
         if (!parsedResponse.ok) {
           res.statusCode = 500
-          res.end()
+          res.end(JSON.stringify({}))
           return
         }
 
