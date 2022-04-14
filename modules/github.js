@@ -24,7 +24,7 @@ export default function() {
         res.setHeader('Access-Control-Allow-Origin', rootUrl)
         res.end(JSON.stringify({
           ...parsedResponse,
-          body: getUrl(parsedResponse.body)
+          json: getUrl(parsedResponse.json)
         }))
       })
       .catch(err => res.end(errorResponse(err)))
