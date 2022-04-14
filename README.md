@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c8c5715-1653-453e-8f72-6aac37b69752/deploy-status)](https://app.netlify.com/sites/peppy-longma-0b4380/deploys)
+
 website
 ========
 Source code for LouiseHermosa.com

@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="name">Mary Louise Hermosa</div>
     <p>&copy; 2022 Mary Louise Hermosa. All rights reserved.</p>
-    <p>This site was made with <a class="fancy-link" href="https://nuxtjs.org/">NuxtJS</a>, and hosted on <a class="fancy-link" href="https://www.netlify.com/">Netlify</a>.</p>
+    <p>This site was made with <a class="fancy-link" href="https://nuxtjs.org/">NuxtJS</a> and <a class="fancy-link" href="https://www.netlify.com/products/functions/">Netlify Functions</a>, and hosted on <a class="fancy-link" href="https://www.netlify.com/">Netlify</a>.</p>
   </footer>
 </template>
 
