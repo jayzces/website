@@ -83,7 +83,6 @@ export default {
   },
   modules: [
     '@nuxtjs/gtm',
-    '@nuxtjs/axios',
     '~/modules/github'
   ],
   publicRuntimeConfig: {
@@ -93,9 +92,9 @@ export default {
   },
   privateRuntimeConfig: {
     github: {
-      api: process.env.GITHUB_API,
+      api: 'https://api.github.com',
       token: process.env.GITHUB_ACCESS_TOKEN,
-      username: process.env.GITHUB_USERNAME
+      username: 'jayzces'
     }
   },
   static: {

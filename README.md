@@ -30,8 +30,6 @@ Create new `.env` file with the following variables
 
 ```
 GITHUB_ACCESS_TOKEN=0
-GITHUB_API=https://api.github.com
-GITHUB_USERNAME=jayzces
 ```
 
 # Sources

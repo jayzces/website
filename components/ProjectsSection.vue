@@ -44,7 +44,7 @@
         })
           .then(response => response.json())
           .then(parsedData => {
-            const parsedBody = parsedData.body
+            const parsedBody = parsedData.json
             this.loading = false
 
             if (parsedBody.length > 0) {

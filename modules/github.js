@@ -3,7 +3,10 @@ import fetch from 'node-fetch'
 
 export default function() {
   const { api, token, username } = this.options.privateRuntimeConfig.github
-  const headers = { 'Authorization': `token ${token}` }
+  const headers = {
+    'Authorization': `token ${token}`,
+    'Accept': 'application/vnd.github.v3+json'
+  }
   const rootUrl = this.options.publicRuntimeConfig.rootUrl
 
   this.nuxt.hook('render:setupMiddleware', app => {
@@ -12,7 +15,7 @@ export default function() {
     app.use('/api/previews', getPreview)
   })
 
-  async function getPreview(req, res) {
+  function getPreview(req, res) {
     const repo = req._parsedUrl.query.split('=')[1]
     fetch(`${api}/repos/${username}/${repo}/contents`, { headers })
       .then(response => unWrap(response))
@@ -24,10 +27,7 @@ export default function() {
           body: getUrl(parsedResponse.body)
         }))
       })
-      .catch(err => {
-        res.statusCode = 400
-        res.end()
-      })
+      .catch(err => res.end(errorResponse(err)))
   }
 
   function getProjects(req, res) {
@@ -37,14 +37,25 @@ export default function() {
     fetch(url, { headers })
       .then(response => unWrap(response))
       .then(parsedResponse => {
+        if (!parsedResponse.ok) {
+          res.statusCode = 500
+          res.end()
+        }
+
         res.setHeader('Content-Type', 'application/json')
         res.setHeader('Access-Control-Allow-Origin', rootUrl)
         res.end(JSON.stringify(parsedResponse))
       })
-      .catch(err => {
-        res.statusCode = 400
-        res.end()
-      })
+      .catch(err => res.end(errorResponse(err)))
+  }
+
+  const errorResponse = err => {
+    return JSON.stringify({
+      ok: false,
+      status: 400,
+      statusText: err.message,
+      json: {}
+    })
   }
 
   const getUrl = data => {
@@ -57,9 +68,9 @@ export default function() {
 
   // still a promise
   const unWrap = response => {
-    return response.json().then(body => {
+    return response.json().then(json => {
       const { ok, status, statusText } = response
-      return { body, ok, status, statusText }
+      return { json, ok, status, statusText }
     })
   }
 }

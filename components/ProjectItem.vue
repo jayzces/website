@@ -35,7 +35,7 @@
       fetchPreview() {
         fetch(`${this.$config.rootUrl}/api/previews?repo=${this.title}`)
           .then(response => response.json())
-          .then(parsedData => this.preview_url = parsedData.body ?? '')
+          .then(parsedData => this.preview_url = parsedData.json ?? '')
       }
     },
     created() {
