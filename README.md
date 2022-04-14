@@ -16,13 +16,13 @@ yarn install
 yarn dev
 
 # Production Build for static hosting
-yarn build
+yarn generate
 
 # Serve Production Build
 yarn start
 
-# Build Files and Serve Production Build
-yarn prod
+# API Netlify Functions
+yarn functions
 ```
 
 # Environment Variables
@@ -35,3 +35,6 @@ GITHUB_ACCESS_TOKEN=0
 # Sources
 - [Assistant Fonts](https://fonts.google.com/specimen/Assistant)
 - [Cattieshine Font](https://befonts.com/cattieshine-script-font.html)
+
+# Notes
+- Installed `@babel/plugin-proposal-private-property-in-object` to fix errors for `yarn generate`

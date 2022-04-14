@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "2.2.0",
+  "version": "2.1.0",
   "description": "Source code for LouiseHermosa.com",
   "main": "index.js",
   "repository": "git@github.com:jayzces/website.git",
@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "generate": "nuxt generate",
     "start": "nuxt start",
-    "prod": "nuxt build && nuxt start"
+    "functions": "netlify-lambda serve functions"
   },
   "dependencies": {
     "@nuxtjs/gtm": "^2.4.0",
@@ -18,6 +18,8 @@
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
-    "@nuxtjs/svg": "^0.4.0"
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@nuxtjs/svg": "^0.4.0",
+    "netlify-lambda": "^2.0.15"
   }
 }

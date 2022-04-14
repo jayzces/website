@@ -37,28 +37,26 @@
     },
     methods: {
       fetchProjects(page = 1, hits = 9) {
-        fetch(`/api/projects`, {
-          headers: { 'Content-Type': 'application/json' },
+        fetch(`${this.$config.apiUrl}/github`, {
           method: 'POST',
           body: JSON.stringify({ page, hits })
         })
-          // .then(response => response.json())
-          // .then(parsedData => {
-          //   const parsedBody = parsedData.json
-          //   this.loading = false
+          .then(response => response.json())
+          .then(parsedData => {
+            this.loading = false
 
-          //   if (parsedBody.length > 0) {
-          //     this.data = parsedBody
-          //     this.showNext = parsedBody.length === hits
-          //     this.showPrev = page > 1
-          //   } else {
-          //     this.page = this.page - 1
-          //     this.showNext = false
-          //     this.showPrev = true
-          //   }
+            if (parsedData.length > 0) {
+              this.data = parsedData
+              this.showNext = parsedData.length === hits
+              this.showPrev = page > 1
+            } else {
+              this.page = this.page - 1
+              this.showNext = false
+              this.showPrev = true
+            }
 
-          //   if (this.scrollToTop) this.scrollToTopSection()
-          // })
+            if (this.scrollToTop) this.scrollToTopSection()
+          })
       },
       navigatePage(newPage) {
         this.page = newPage
@@ -150,7 +148,7 @@
 
   .filled:hover,
   .outlined:hover::before {
-    background-size: 300% 300%;
+    background-image: none;
     animation: wave 3s ease infinite;
   }
 
@@ -183,11 +181,12 @@
   @keyframes wave {
     0%,
     100% {
+      background-color: var(--main-accent);
       background-position: 0 0;
     }
 
     50% {
-      background-position: 75% 100%;
+      background-color: var(--sub-accent);
     }
   }
 

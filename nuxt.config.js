@@ -83,19 +83,10 @@ export default {
   },
   modules: [
     '@nuxtjs/gtm',
-    '~/modules/github'
   ],
   publicRuntimeConfig: {
-    functionsURL: process.env.NETLIFY_FUNCTIONS_URL || '',
-    rootUrl: process.env.NODE_ENV === 'production'
-      ? 'https://louisehermosa.com' : 'http://localhost:3000'
-  },
-  privateRuntimeConfig: {
-    github: {
-      api: 'https://api.github.com',
-      token: process.env.GITHUB_ACCESS_TOKEN,
-      username: 'jayzces'
-    }
+    apiUrl: process.env.NODE_ENV === 'production'
+      ? process.env.PROD_FUNCTIONS_URL : process.env.DEV_FUNCTIONS_URL
   },
   static: {
     prefix: false
