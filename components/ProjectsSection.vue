@@ -42,23 +42,23 @@
           method: 'POST',
           body: JSON.stringify({ page, hits })
         })
-          .then(response => response.json())
-          .then(parsedData => {
-            const parsedBody = parsedData.json
-            this.loading = false
+          // .then(response => response.json())
+          // .then(parsedData => {
+          //   const parsedBody = parsedData.json
+          //   this.loading = false
 
-            if (parsedBody.length > 0) {
-              this.data = parsedBody
-              this.showNext = parsedBody.length === hits
-              this.showPrev = page > 1
-            } else {
-              this.page = this.page - 1
-              this.showNext = false
-              this.showPrev = true
-            }
+          //   if (parsedBody.length > 0) {
+          //     this.data = parsedBody
+          //     this.showNext = parsedBody.length === hits
+          //     this.showPrev = page > 1
+          //   } else {
+          //     this.page = this.page - 1
+          //     this.showNext = false
+          //     this.showPrev = true
+          //   }
 
-            if (this.scrollToTop) this.scrollToTopSection()
-          })
+          //   if (this.scrollToTop) this.scrollToTopSection()
+          // })
       },
       navigatePage(newPage) {
         this.page = newPage
